@@ -6,7 +6,7 @@ import ButtonSizeIcon from '../buttons/button-size-icon.svelte';
 import ButtonLoading from '../buttons/button-loading.svelte';
 
 const meta = {
-	title: 'Components/Buttons/Tailwind',
+	title: 'Components/With Tailwind/Buttons',
 	component: Button,
 	tags: ['autodocs'],
 	argTypes: {

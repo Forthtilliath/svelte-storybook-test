@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/svelte';
-import Button from './button-css.svelte';
+import Button from './button.svelte';
 
 const meta = {
   // Utile pour l'affichage dans la sidebar. Components sera un bloc avec en sous élément Button CSS
-  title: 'Components/Buttons/CSS',
+  title: 'Components/With CSS/Buttons',
   // C'est le composant qui sera affiché
   component: Button,
   // Permet d'auto générer la doc via la jsdoc et les variables plus bas

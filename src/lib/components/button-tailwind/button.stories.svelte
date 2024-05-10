@@ -4,7 +4,7 @@
 	import '../../../app.css';
 
 	export const meta = {
-		title: 'Components/Buttons/Tailwind With CSF',
+		title: 'Components/With Tailwind + CSF/Buttons',
 		component: Button,
 		tags: ['autodocs'],
 		argTypes: {
