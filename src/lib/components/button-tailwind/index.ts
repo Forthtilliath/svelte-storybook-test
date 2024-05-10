@@ -1,4 +1,4 @@
-import Root from './button-tw.svelte';
+import Root from './Button.svelte';
 import { type VariantProps, tv } from 'tailwind-variants';
 
 export const buttonVariants = tv({
