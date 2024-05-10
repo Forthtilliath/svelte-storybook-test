@@ -66,3 +66,5 @@ Cette méthode affichera correctement le code à récupérer.
 ## L'index
 
 Le fichier index permet d'exporter le composant Button. Celui ci contient aussi les variants (j'ai repris comme shadcn a fait).
+
+Voici une autre possibilité de gérer les classes tailwinds : [Flowbite-svelte](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/buttons/Button.svelte)
