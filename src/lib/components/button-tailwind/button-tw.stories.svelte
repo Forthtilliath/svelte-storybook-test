@@ -27,6 +27,7 @@
 <script lang="ts">
 	import { Story, Template } from '@storybook/addon-svelte-csf';
 	import EnvelopeOpen from 'svelte-radix/EnvelopeOpen.svelte';
+	import { ChevronRight, Reload } from 'svelte-radix';
 </script>
 
 <Template let:args>
@@ -45,5 +46,18 @@
 	<Button>
 		<EnvelopeOpen class="h-5 w-5 mr-2" />
 		With Icon
+	</Button>
+</Story>
+
+<Story name="Icon">
+	<Button size="icon">
+		<ChevronRight class="h-4 w-4" />
+	</Button>
+</Story>
+
+<Story name="Loading">
+	<Button disabled>
+		<Reload class="mr-2 h-4 w-4 animate-spin" />
+		Please wait
 	</Button>
 </Story>
