@@ -3,6 +3,7 @@
 	import { type VariantProps, tv } from 'tailwind-variants';
 	import '../../app.css';
 	import type { SvelteComponent } from 'svelte';
+	import type { HTMLButtonAttributes } from 'svelte/elements';
 
 	const buttonVariants = tv({
 		base: 'inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50',
@@ -30,20 +31,17 @@
 
 	type Variant = VariantProps<typeof buttonVariants>['variant'];
 	type Size = VariantProps<typeof buttonVariants>['size'];
-	type $$Props = {
+
+	interface $$Props extends HTMLButtonAttributes {
 		class?: string;
 		variant?: Variant;
 		size?: Size;
-		// label?: string;
 		content?: string | SvelteComponent;
-	};
+	}
 
-	/** Additional classes. */
-	let className: $$Props['class'] = undefined;
-	/** Variant of button */
+	let className: $$Props['class'] = "";
 	export let variant: $$Props['variant'] = 'default';
 	export let size: $$Props['size'] = 'default';
-	// export let label: $$Props['label'] = 'Button';
 	export let content: $$Props['content'] = 'Button';
 	export { className as class };
 </script>

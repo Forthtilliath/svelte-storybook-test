@@ -1,7 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/svelte';
 import Button from './button-tw.svelte';
 import '../../app.css';
-import ButtonContentWithIcon from './ButtonContentWithIcon.svelte';
+import ButtonWithIcon from './button-with-icon.svelte';
+import ButtonSizeIcon from './button-size-icon.svelte';
+import ButtonLoading from './button-loading.svelte';
 
 const meta = {
 	// Utile pour l'affichage dans la sidebar. Components sera un bloc avec en sous élément Button CSS
@@ -12,17 +14,19 @@ const meta = {
 	tags: ['autodocs'],
 	// Permet de définir comment on modifie les paramètres du composant dans l'ui
 	argTypes: {
-		class: { control: 'text', type: 'string' },
+		class: {
+			control: 'text'
+		},
 		size: {
 			control: 'select',
-			options: ['default', 'sm', 'lg']
+			options: ['default', 'sm', 'lg', 'icon']
 		},
 		variant: {
 			control: 'select',
 			options: ['default', 'destructive', 'outline', 'secondary', 'ghost', 'link']
 		},
 		content: {
-      control: 'text',
+			control: 'text'
 		}
 	}
 } satisfies Meta<Button>;
@@ -63,20 +67,29 @@ export const Link: Story = {
 };
 
 export const WithIcon: Story = {
-	argTypes: {
-		content: {
-			control: 'select',
-			options: ['Button1'],
-			mapping: {
-				Button1: ButtonContentWithIcon
-			}
-		}
-	}
-	// render: (args) => ({
-	//   Component: Button,
-	//   props: args,
-	//   slots: {
-	//     icon: EnvelopeOpen
-	//   }
-	// })
+	render: (args) => ({
+    Component: ButtonWithIcon,
+		props: args
+	})
+};
+
+export const Icon: Story = {
+	args: {
+		variant: 'outline',
+		size: 'icon',
+	},
+	render: (args) => ({
+		Component: ButtonSizeIcon,
+		props: args
+	})
+};
+
+export const Loading: Story = {
+	args: {
+		disabled: true
+	},
+	render: (args) => ({
+		Component: ButtonLoading,
+		props: args
+	})
 };

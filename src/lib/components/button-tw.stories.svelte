@@ -1,7 +1,6 @@
 <script lang="ts" context="module">
 	import type { Meta, StoryObj } from '@storybook/svelte';
 	import Button from './button-tw.svelte';
-	import ButtonContentWithIcon from './ButtonContentWithIcon.svelte';
 	import '../../app.css';
 
 	export const meta = {

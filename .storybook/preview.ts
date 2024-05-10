@@ -1,5 +1,5 @@
 import type { Preview } from '@storybook/svelte';
-
+import DocumentationTemplate from './DocumentationTemplate.mdx';
 const preview: Preview = {
 	parameters: {
 		controls: {
@@ -7,6 +7,9 @@ const preview: Preview = {
 				color: /(background|color)$/i,
 				date: /Date$/i
 			}
+		},
+		docs: {
+			page: DocumentationTemplate
 		}
 	}
 };
