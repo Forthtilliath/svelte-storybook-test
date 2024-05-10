@@ -1,16 +1,12 @@
 <script lang="ts" context="module">
-	import type { Meta, StoryObj } from '@storybook/svelte';
+	import type { Meta } from '@storybook/svelte';
 	import Button from './button-tw.svelte';
-	import '../../app.css';
+	import '../../../app.css';
 
 	export const meta = {
-		// Utile pour l'affichage dans la sidebar. Components sera un bloc avec en sous élément Button CSS
-		title: 'Components/Button Tailwind Addon',
-		// C'est le composant qui sera affiché
+		title: 'Components/Buttons/Tailwind With CSF',
 		component: Button,
-		// Permet d'auto générer la doc via la jsdoc et les variables plus bas
 		tags: ['autodocs'],
-		// Permet de définir comment on modifie les paramètres du composant dans l'ui
 		argTypes: {
 			class: { control: 'text', type: 'string' },
 			size: {

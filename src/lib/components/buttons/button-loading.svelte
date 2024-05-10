@@ -1,6 +1,6 @@
 <script lang="ts">
   import Reload from "svelte-radix/Reload.svelte";
-	import ButtonTw from './button-tw.svelte';
+	import ButtonTw from '../button-tailwind/button-tw.svelte';
 	import type { ComponentProps } from 'svelte';
 
 	type $$Props = ComponentProps<ButtonTw>;

@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { cn } from '$lib/utils.js';
 	import { type VariantProps, tv } from 'tailwind-variants';
-	import '../../app.css';
+	import '../../../app.css';
 	import type { SvelteComponent } from 'svelte';
 	import type { HTMLButtonAttributes } from 'svelte/elements';
 

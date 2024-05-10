@@ -1,18 +1,15 @@
 import type { Meta, StoryObj } from '@storybook/svelte';
-import Button from './button-css.svelte';
+import Button from './Button.svelte';
 
+// More on how to set up stories at: https://storybook.js.org/docs/writing-stories
 const meta = {
-  // Utile pour l'affichage dans la sidebar. Components sera un bloc avec en sous élément Button CSS
-  title: 'Components/Buttons/CSS',
-  // C'est le composant qui sera affiché
+  title: 'Example/Button',
   component: Button,
-  // Permet d'auto générer la doc via la jsdoc et les variables plus bas
   tags: ['autodocs'],
-  // Permet de définir comment on modifie les paramètres du composant dans l'ui
   argTypes: {
     backgroundColor: { control: 'color' },
     size: {
-      control: 'select',
+      control: { type: 'select' },
       options: ['small', 'medium', 'large'],
     },
   },
@@ -21,6 +18,7 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
+// More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const Primary: Story = {
   args: {
     primary: true,

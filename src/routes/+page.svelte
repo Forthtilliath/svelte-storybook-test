@@ -1,5 +1,5 @@
 <script>
-	import ButtonTw from "$lib/components/button-tw.svelte";
+	import ButtonTw from "$lib/components/button-tailwind/button-tw.svelte";
   import '../app.css'
 
 </script>
