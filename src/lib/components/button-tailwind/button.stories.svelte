@@ -34,17 +34,39 @@
 	<Button {...args} />
 </Template>
 
-<Story name="Primary" />
+<Story name="Primary">
+	<Button />
+</Story>
 
-<Story name="Secondary" args={{ variant: 'secondary' }} />
-<Story name="Destructive" args={{ variant: 'destructive' }} />
-<Story name="Outline" args={{ variant: 'outline' }} />
-<Story name="Ghost" args={{ variant: 'ghost' }} />
-<Story name="Link" args={{ variant: 'link' }} />
+<Story
+	name="Secondary"
+	args={{ variant: 'secondary' }}
+	parameters={{ docs: { source: { code: '<Button variant="secondary" />' } } }}
+/>
+<Story
+	name="Destructive"
+	args={{ variant: 'destructive' }}
+	parameters={{ docs: { source: { code: '<Button variant="destructive" />' } } }}
+/>
+<Story
+	name="Outline"
+	args={{ variant: 'outline' }}
+	parameters={{ docs: { source: { code: '<Button variant="outline" />' } } }}
+/>
+<Story
+	name="Ghost"
+	args={{ variant: 'ghost' }}
+	parameters={{ docs: { source: { code: '<Button variant="ghost" />' } } }}
+/>
+<Story
+	name="Link"
+	args={{ variant: 'link' }}
+	parameters={{ docs: { source: { code: '<Button variant="link" />' } } }}
+/>
 
 <Story name="With Icon">
 	<Button>
-		<EnvelopeOpen class="h-5 w-5 mr-2" />
+		<EnvelopeOpen class="mr-2 h-5 w-5" />
 		With Icon
 	</Button>
 </Story>

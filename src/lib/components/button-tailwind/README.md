@@ -22,6 +22,47 @@ Pas grand chose à dire sur celui. Juste les utilisations pour ajouter un compos
 
 Si on compare avec le fichier précédent, l'utilisation est énormément simplfiée ! Ici, pas besoin de composant externe pour mettre un composant en enfant !
 
+Ce code permet de déclarer le template utilisé par les Story.
+```jsx
+<Template let:args>
+	<Button {...args} />
+</Template>
+```
+
+Pour s'en servir, il existe 2 utilisations possible.
+
+### En utilisant le template
+
+```jsx
+<Story name="Primary" />
+```
+Un problème est rencontrée avec cette méthode, le code que l'on peut récupérer sur la doc est le suivant :
+
+```jsx
+<Proxy<RenderContext> />
+```
+
+Hors, on souhaiterait avoir ce code :
+```jsx
+<Button />
+```
+
+Pour remédier à ce problème, on peut utiliser la prop parameters.
+
+```jsx
+<Story name="Primary" parameters={{ docs: { source: { code: '<Button />' } } }} />
+```
+
+### Sans utiliser le template
+
+```jsx
+<Story name="Primary">
+	<Button />
+</Story>
+```
+
+Cette méthode affichera correctement le code à récupérer.
+
 ## L'index
 
 Le fichier index permet d'exporter le composant Button. Celui ci contient aussi les variants (j'ai repris comme shadcn a fait).
