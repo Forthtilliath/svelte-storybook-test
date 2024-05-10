@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/svelte';
-import Button from './button.svelte';
+import Button from './Button.svelte';
 
 const meta = {
   // Utile pour l'affichage dans la sidebar. Components sera un bloc avec en sous élément Button CSS
