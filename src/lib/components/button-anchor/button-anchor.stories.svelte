@@ -29,8 +29,7 @@
 
 <script lang="ts">
 	import { Story } from '@storybook/addon-svelte-csf';
-	import EnvelopeOpen from 'svelte-radix/EnvelopeOpen.svelte';
-	import { ChevronRight, Reload } from 'svelte-radix';
+	import { ChevronRight } from 'svelte-radix';
 </script>
 
 <Story name="Button">
