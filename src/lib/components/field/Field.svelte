@@ -8,10 +8,10 @@
 
 	import { TYPE_FIELD, type FieldProps } from './index.js';
 
-	type CheckboxProps = FieldProps['Checkbox'] & {
+	type CheckboxProps = Omit<FieldProps['Checkbox'], 'type'> & {
 		type: typeof TYPE_FIELD.Checkbox;
 	};
-	type SwitchProps = FieldProps['Switch'] & {
+	type SwitchProps = Omit<FieldProps['Switch'], 'type'> & {
 		type: typeof TYPE_FIELD.Switch;
 	};
 	type RadioGroupProps = FieldProps['RadioGroup'] & {

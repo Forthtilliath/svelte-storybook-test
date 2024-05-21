@@ -33,33 +33,33 @@ type FieldCheckboxProps = Checkbox.Props & {
 	selected?: never;
 };
 
-export type FieldInputProps = Omit<Input.Props, 'type'> & {
+type FieldInputProps = Omit<Input.Props, 'type'> & {
 	type: InputTypeField;
 	label?: string;
 	checked?: never;
 	selected?: never;
 };
 
-export type FieldRadioGroupProps = RadioGroup.Props & {
+type FieldRadioGroupProps = RadioGroup.Props & {
 	items?: Item[];
 	label?: never;
 	checked?: never;
 	selected?: never;
 };
 
-export type FieldSelectProps = Select.Props<string, false> & {
+type FieldSelectProps = Select.Props<string, false> & {
 	label?: string;
 	checked?: never;
 	placeholder?: string;
 	value?: never;
 };
 
-export type FieldSwitchProps = Switch.Props & {
+type FieldSwitchProps = Switch.Props & {
 	label?: string;
 	selected?: never;
 };
 
-export type FieldTextareaProps = Textarea.Props & {
+type FieldTextareaProps = Textarea.Props & {
 	label?: never;
 	checked?: never;
 	selected?: never;
