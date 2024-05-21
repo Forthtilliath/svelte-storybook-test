@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { writable } from 'svelte/store';
 	import Field from '$lib/components/field/Field.svelte';
 	import '../app.css';
 
@@ -9,19 +8,28 @@
 		{ label: 'Three', value: 'three' }
 	];
 
-	let cb = false;
+	// let checkbox = false;
+	// let switch = false;
+
+	let values = {
+		radiogroup: '',
+		textarea: '',
+		select: '',
+		switch: false,
+		checkbox: false,
+	};
 </script>
 
 <h1>Welcome to SvelteKit</h1>
 
-<Field type="radiogroup" {items} orientation="vertical" />
+<Field type="radiogroup" bind:value={values.radiogroup} {items} orientation="vertical" />
 
-<Field type="textarea" placeholder="Textarea" />
+<Field type="textarea" bind:value={values.textarea} placeholder="Textarea" />
 
-<Field type="select" {items} placeholder="Select" />
+<Field type="select" bind:value={values.select} {items} placeholder="Select" />
 
-<Field type="switch" label="Accept terms and conditions" />
+<Field type="switch" bind:checked={values.switch} label="Accept terms and conditions" />
 
-<Field type="checkbox" bind:checked={cb} label="Accept terms and conditions" />
+<Field type="checkbox" bind:checked={values.checkbox} label="Accept terms and conditions" />
 
-<pre>{JSON.stringify({ cb }, null, 2)}</pre>
+<pre>{JSON.stringify(values, null, 2)}</pre>

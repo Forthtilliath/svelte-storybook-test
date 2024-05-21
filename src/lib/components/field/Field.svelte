@@ -18,8 +18,7 @@
 	// [x] Select
 	// [x] Switch (‼ button ‼)
 	// [x] Textarea
-	type ItemWithoutId = { label: string; value: string };
-	type ItemWithId = { label: string; value: string; id: PropertyKey };
+	type Item = { label: string; value: string };
 
 	type CheckboxProps = Omit<Checkbox.Props, 'type'> & {
 		type: 'checkbox';
@@ -27,14 +26,16 @@
 		placeholder?: never;
 		label: string;
 		id?: string;
+		value?: never;
+		checked?: boolean;
 	};
 
 	type RadioGroupProps = RadioGroup.Props & {
 		type: 'radiogroup';
-		items?: ItemWithId[];
+		items?: Item[];
 		placeholder?: never;
 		label?: never;
-		id?: string;
+		id?: never;
 		checked?: never;
 	};
 	type TextareaProps = ComponentProps<Textarea> & {
@@ -49,6 +50,7 @@
 		placeholder?: string;
 		label?: string;
 		id?: string;
+		value?: string;
 		checked?: never;
 	};
 	type SwitchProps = Omit<Switch.Props, 'type'> & {
@@ -57,8 +59,9 @@
 		placeholder?: never;
 		label: string;
 		id?: string;
+		value?: never;
 	};
-	type InputProps = ComponentProps<Input> & {
+	type InputProps = Omit<ComponentProps<Input>, 'type'> & {
 		type: 'text' | 'number' | 'password' | 'email' | 'search' | 'tel' | 'url';
 		items?: never;
 		label?: string;
@@ -76,7 +79,7 @@
 	/**
 	 * Type of the field
 	 */
-	export let type: $$Props['type'] = "text";
+	export let type: $$Props['type'] = 'text';
 	/**
 	 * List of items. Only required with radiogroup and select
 	 */
@@ -89,7 +92,9 @@
 	 * Label. Only required with switch and checkbox
 	 */
 	export let label: $$Props['label'] = undefined;
+
 	export let checked: $$Props['checked'] = undefined;
+	export let value: $$Props['value'] = undefined;
 
 	// TODO: Add custom classes
 	// let className: $$Props["class"] = undefined;
@@ -108,10 +113,10 @@
 		</Label>
 	</div>
 {:else if type === 'radiogroup'}
-	<RadioGroup.Root {...$$restProps}>
+	<RadioGroup.Root bind:value {...$$restProps}>
 		{#if items}
-			{#each items as { label, value, id: radioId }}
-				{@const id = radioId ?? uniqueId('radio-group-')}
+			{#each items as { label, value }}
+				{@const id = uniqueId('radio-group-')}
 				<div class="flex items-center space-x-2">
 					<RadioGroup.Item {value} {id} />
 					<Label for={id}>{label}</Label>
@@ -121,9 +126,9 @@
 		<RadioGroup.Input name="spacing" />
 	</RadioGroup.Root>
 {:else if type === 'textarea'}
-	<Textarea {placeholder} {...$$restProps} />
+	<Textarea {placeholder} bind:value {...$$restProps} />
 {:else if type === 'select'}
-	<Select.Root {...$$restProps}>
+	<Select.Root bind:selected={value} {...$$restProps}>
 		{#if placeholder}
 			<Select.Trigger class="w-[180px]">
 				<Select.Value {placeholder} />
@@ -140,7 +145,7 @@
 {:else if type === 'switch'}
 	{@const id = $$props.id || uniqueId('switch-')}
 	<div class="flex items-center space-x-2">
-		<Switch.Root {id} {...$$restProps} />
+		<Switch.Root {id} bind:checked {...$$restProps} />
 		<Label for={id}>{label}</Label>
 	</div>
 {:else}
