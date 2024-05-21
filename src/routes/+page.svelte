@@ -20,7 +20,7 @@
 
 <Field type="select" {items} placeholder="Select" />
 
-<Field type="switch" />
+<Field type="switch" label="Accept terms and conditions" />
 
 <Field type="checkbox" bind:checked={cb} label="Accept terms and conditions" />
 

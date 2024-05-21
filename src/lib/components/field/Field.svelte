@@ -18,8 +18,8 @@
 	// [x] Select
 	// [x] Switch (‼ button ‼)
 	// [x] Textarea
-	type ItemWithoutId = { label: string; value: string; }
-	type ItemWithId = { label: string; value: string; id: PropertyKey }
+	type ItemWithoutId = { label: string; value: string };
+	type ItemWithId = { label: string; value: string; id: PropertyKey };
 
 	type CheckboxProps = Omit<Checkbox.Props, 'type'> & {
 		type: 'checkbox';
@@ -31,7 +31,7 @@
 
 	type RadioGroupProps = RadioGroup.Props & {
 		type: 'radiogroup';
-		items?: ItemWithoutId[];
+		items?: ItemWithId[];
 		placeholder?: never;
 		label?: never;
 		id?: string;
@@ -59,6 +59,7 @@
 		id?: string;
 	};
 	type InputProps = ComponentProps<Input> & {
+		type: 'text' | 'number' | 'password' | 'email' | 'search' | 'tel' | 'url';
 		items?: never;
 		label?: string;
 		checked?: never;
@@ -72,9 +73,21 @@
 		| SwitchProps
 		| TextareaProps;
 
-	export let type: $$Props['type'] = undefined;
+	/**
+	 * Type of the field
+	 */
+	export let type: $$Props['type'] = "text";
+	/**
+	 * List of items. Only required with radiogroup and select
+	 */
 	export let items: $$Props['items'] = undefined;
+	/**
+	 * Placeholder. Only required with input and textarea
+	 */
 	export let placeholder: $$Props['placeholder'] = undefined;
+	/**
+	 * Label. Only required with switch and checkbox
+	 */
 	export let label: $$Props['label'] = undefined;
 	export let checked: $$Props['checked'] = undefined;
 
