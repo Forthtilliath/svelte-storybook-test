@@ -6,33 +6,24 @@
 	import FieldSelect from './field-select.svelte';
 	import FieldTextarea from './field-textarea.svelte';
 
-	import { TYPE_FIELD } from './index.js';
-	import type {
-		FieldCheckboxProps,
-		FieldInputProps,
-		FieldRadioGroupProps,
-		FieldSelectProps,
-		FieldSwitchProps,
-		FieldTextareaProps
-	} from './index.js';
+	import { TYPE_FIELD, type FieldProps } from './index.js';
 
-	type CheckboxProps = Omit<FieldCheckboxProps, 'type'> & {
+	type CheckboxProps = FieldProps['Checkbox'] & {
 		type: typeof TYPE_FIELD.Checkbox;
 	};
-	type SwitchProps = Omit<FieldSwitchProps, 'type'> & {
+	type SwitchProps = FieldProps['Switch'] & {
 		type: typeof TYPE_FIELD.Switch;
 	};
-	type RadioGroupProps = Omit<FieldRadioGroupProps, 'type'> & {
+	type RadioGroupProps = FieldProps['RadioGroup'] & {
 		type: typeof TYPE_FIELD.RadioGroup;
 	};
-	type SelectProps = Omit<FieldSelectProps, 'type'> & {
+	type SelectProps = FieldProps['Select'] & {
 		type: typeof TYPE_FIELD.Select;
 	};
-	type a = SelectProps["selected"]
-	type TextareaProps = Omit<FieldTextareaProps, 'type'> & {
+	type TextareaProps = FieldProps['Textarea'] & {
 		type: typeof TYPE_FIELD.Textarea;
 	};
-	type InputProps = FieldInputProps & {};
+	type InputProps = FieldProps['Input'] & {};
 
 	type $$Props =
 		| CheckboxProps

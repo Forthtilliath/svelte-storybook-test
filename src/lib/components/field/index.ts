@@ -27,7 +27,7 @@ export type TypeField = (typeof TYPE_FIELD)[keyof typeof TYPE_FIELD] | InputType
 
 type Item = { label?: string; value: string };
 
-export type FieldCheckboxProps = Checkbox.Props & {
+type FieldCheckboxProps = Checkbox.Props & {
 	label?: string;
 	checked?: boolean;
 	selected?: never;
@@ -64,3 +64,12 @@ export type FieldTextareaProps = Textarea.Props & {
 	checked?: never;
 	selected?: never;
 };
+
+export type FieldProps = {
+	Checkbox: FieldCheckboxProps;
+	Input: FieldInputProps;
+	RadioGroup: FieldRadioGroupProps;
+	Select: FieldSelectProps;
+	Switch: FieldSwitchProps;
+	Textarea: FieldTextareaProps;
+}
