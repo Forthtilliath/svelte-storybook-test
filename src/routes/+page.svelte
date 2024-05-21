@@ -17,7 +17,8 @@
 		select: '',
 		switch: false,
 		checkbox: false,
-		input: ''
+		input_text: '',
+		input_number: 0
 	};
 </script>
 
@@ -33,6 +34,7 @@
 
 <Field type="checkbox" bind:checked={values.checkbox} label="Accept terms and conditions" />
 
-<Field bind:value={values.input} placeholder="Input" />
+<Field bind:value={values.input_text} placeholder="Input" />
+<Field type="number" bind:value={values.input_number} />
 
 <pre>{JSON.stringify(values, null, 2)}</pre>

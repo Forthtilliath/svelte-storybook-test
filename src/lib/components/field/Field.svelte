@@ -1,15 +1,17 @@
 <script lang="ts">
 	import type { ComponentProps } from 'svelte';
-	// import Checkbox from '$lib/components/shared/ui/checkbox/checkbox.svelte';
+
 	import { Input } from '$lib/components/shared/ui/input';
 	import { Label } from '$lib/components/shared/ui/label';
 	import { Textarea } from '$lib/components/shared/ui/textarea';
+
 	import * as RadioGroup from '$lib/components/shared/ui/radio-group';
 	import * as Select from '$lib/components/shared/ui/select';
 	import * as Checkbox from '$lib/components/shared/ui/checkbox';
 	import * as Switch from '$lib/components/shared/ui/switch';
 
 	import { uniqueId } from '$lib/utils';
+	import { TypeField } from './index.js';
 
 	// [x] Checkbox (‼ button ‼)
 	// [ ] Date Picker
@@ -18,10 +20,11 @@
 	// [x] Select
 	// [x] Switch (‼ button ‼)
 	// [x] Textarea
+	// [ ] File ?
 	type Item = { label?: string; value: string };
 
 	type CheckboxProps = Omit<Checkbox.Props, 'type'> & {
-		type: 'checkbox';
+		type: typeof TypeField.Checkbox;
 		items?: never;
 		placeholder?: never;
 		label: string;
@@ -31,7 +34,7 @@
 	};
 
 	type RadioGroupProps = RadioGroup.Props & {
-		type: 'radiogroup';
+		type: typeof TypeField.RadioGroup;
 		items?: Item[];
 		placeholder?: never;
 		label?: never;
@@ -39,7 +42,7 @@
 		checked?: never;
 	};
 	type TextareaProps = ComponentProps<Textarea> & {
-		type: 'textarea';
+		type: typeof TypeField.Textarea;
 		items?: never;
 		label?: string;
 		id?: string;
@@ -47,7 +50,7 @@
 		// value?: string;
 	};
 	type SelectProps = Select.Props<string, false> & {
-		type: 'select';
+		type: typeof TypeField.Select;
 		placeholder?: string;
 		label?: string;
 		id?: string;
@@ -55,7 +58,7 @@
 		checked?: never;
 	};
 	type SwitchProps = Omit<Switch.Props, 'type'> & {
-		type: 'switch';
+		type: typeof TypeField.Switch;
 		items?: never;
 		placeholder?: never;
 		label: string;
@@ -63,7 +66,7 @@
 		value?: never;
 	};
 	type InputProps = Omit<ComponentProps<Input>, 'type'> & {
-		type?: 'text' | 'number' | 'password' | 'email' | 'search' | 'tel' | 'url';
+		type?: 'text' | 'number' | 'password' | 'email' | 'search' | 'tel' | 'url' | 'file';
 		items?: never;
 		label?: string;
 		checked?: never;
@@ -93,8 +96,13 @@
 	 * Label. Only required with switch and checkbox
 	 */
 	export let label: $$Props['label'] = undefined;
-
+	/**
+	 * Checked. Available for switch and checkbox
+	 */
 	export let checked: $$Props['checked'] = undefined;
+	/**
+	 * Value. Available for every other field
+	 */
 	export let value: $$Props['value'] = undefined;
 
 	// TODO: Add custom classes
@@ -102,7 +110,7 @@
 	// export { className as class };
 </script>
 
-{#if type === 'checkbox'}
+{#if type === TypeField.Checkbox}
 	{@const id = $$props.id ?? uniqueId('checkbox-')}
 	<div class="flex items-center space-x-2">
 		<Checkbox.Root {id} bind:checked {...$$restProps} />
@@ -113,7 +121,7 @@
 			{label}
 		</Label>
 	</div>
-{:else if type === 'radiogroup'}
+{:else if type === TypeField.RadioGroup}
 	<RadioGroup.Root bind:value {...$$restProps}>
 		{#if items}
 			{#each items as { label, value }}
@@ -126,9 +134,9 @@
 		{/if}
 		<RadioGroup.Input name="spacing" />
 	</RadioGroup.Root>
-{:else if type === 'textarea'}
+{:else if type === TypeField.Textarea}
 	<Textarea {placeholder} bind:value {...$$restProps} />
-{:else if type === 'select'}
+{:else if type === TypeField.Select}
 	<Select.Root bind:selected={value} {...$$restProps}>
 		{#if placeholder}
 			<Select.Trigger class="w-[180px]">
@@ -143,7 +151,7 @@
 			</Select.Content>
 		{/if}
 	</Select.Root>
-{:else if type === 'switch'}
+{:else if type === TypeField.Switch}
 	{@const id = $$props.id ?? uniqueId('switch-')}
 	<div class="flex items-center space-x-2">
 		<Switch.Root {id} bind:checked {...$$restProps} />
