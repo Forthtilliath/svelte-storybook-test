@@ -28,6 +28,7 @@
 	import { Story, Template } from '@storybook/addon-svelte-csf';
 	import EnvelopeOpen from 'svelte-radix/EnvelopeOpen.svelte';
 	import { ChevronRight, Reload } from 'svelte-radix';
+	import { addCode } from '$lib/utils';
 </script>
 
 <Template let:args>
@@ -41,28 +42,24 @@
 <Story
 	name="Secondary"
 	args={{ variant: 'secondary' }}
-	parameters={{ docs: { source: { code: '<Button variant="secondary" />' } } }}
+	parameters={addCode('<Button variant="secondary" />')}
 />
 <Story
 	name="Destructive"
 	args={{ variant: 'destructive' }}
-	parameters={{ docs: { source: { code: '<Button variant="destructive" />' } } }}
+	parameters={addCode('<Button variant="destructive" />')}
 />
 <Story
 	name="Outline"
 	args={{ variant: 'outline' }}
-	parameters={{ docs: { source: { code: '<Button variant="outline" />' } } }}
+	parameters={addCode('<Button variant="outline" />')}
 />
 <Story
 	name="Ghost"
 	args={{ variant: 'ghost' }}
-	parameters={{ docs: { source: { code: '<Button variant="ghost" />' } } }}
+	parameters={addCode('<Button variant="ghost" />')}
 />
-<Story
-	name="Link"
-	args={{ variant: 'link' }}
-	parameters={{ docs: { source: { code: '<Button variant="link" />' } } }}
-/>
+<Story name="Link" args={{ variant: 'link' }} parameters={addCode('<Button variant="link" />')} />
 
 <Story name="With Icon">
 	<Button>
