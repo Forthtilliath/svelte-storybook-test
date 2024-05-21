@@ -18,7 +18,7 @@
 	// [x] Select
 	// [x] Switch (‼ button ‼)
 	// [x] Textarea
-	type Item = { label: string; value: string };
+	type Item = { label?: string; value: string };
 
 	type CheckboxProps = Omit<Checkbox.Props, 'type'> & {
 		type: 'checkbox';
@@ -44,6 +44,7 @@
 		label?: string;
 		id?: string;
 		checked?: never;
+		// value?: string;
 	};
 	type SelectProps = Select.Props<string, false> & {
 		type: 'select';
@@ -62,7 +63,7 @@
 		value?: never;
 	};
 	type InputProps = Omit<ComponentProps<Input>, 'type'> & {
-		type: 'text' | 'number' | 'password' | 'email' | 'search' | 'tel' | 'url';
+		type?: 'text' | 'number' | 'password' | 'email' | 'search' | 'tel' | 'url';
 		items?: never;
 		label?: string;
 		checked?: never;
@@ -102,7 +103,7 @@
 </script>
 
 {#if type === 'checkbox'}
-	{@const id = $$props.id || uniqueId('cb-')}
+	{@const id = $$props.id ?? uniqueId('checkbox-')}
 	<div class="flex items-center space-x-2">
 		<Checkbox.Root {id} bind:checked {...$$restProps} />
 		<Label
@@ -134,20 +135,26 @@
 				<Select.Value {placeholder} />
 			</Select.Trigger>
 		{/if}
-		<Select.Content>
-			{#if items}
+		{#if items}
+			<Select.Content>
 				{#each items as { label, value }}
-					<Select.Item {value}>{label}</Select.Item>
+					<Select.Item {value}>{label ?? value}</Select.Item>
 				{/each}
-			{/if}
-		</Select.Content>
+			</Select.Content>
+		{/if}
 	</Select.Root>
 {:else if type === 'switch'}
-	{@const id = $$props.id || uniqueId('switch-')}
+	{@const id = $$props.id ?? uniqueId('switch-')}
 	<div class="flex items-center space-x-2">
 		<Switch.Root {id} bind:checked {...$$restProps} />
 		<Label for={id}>{label}</Label>
 	</div>
 {:else}
-	<Input {type} {...$$restProps} />
+	{@const id = $$props.id ?? uniqueId('input-')}
+	<div class="flex items-center space-x-2">
+		{#if label}
+			<Label for={id}>{label}</Label>
+		{/if}
+		<Input {type} {id} {placeholder} bind:value {...$$restProps} />
+	</div>
 {/if}

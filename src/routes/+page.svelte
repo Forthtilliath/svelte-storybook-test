@@ -17,12 +17,13 @@
 		select: '',
 		switch: false,
 		checkbox: false,
+		input: ''
 	};
 </script>
 
 <h1>Welcome to SvelteKit</h1>
 
-<Field type="radiogroup" bind:value={values.radiogroup} {items} orientation="vertical" />
+<Field type="radiogroup" bind:value={values.radiogroup} {items} />
 
 <Field type="textarea" bind:value={values.textarea} placeholder="Textarea" />
 
@@ -31,5 +32,7 @@
 <Field type="switch" bind:checked={values.switch} label="Accept terms and conditions" />
 
 <Field type="checkbox" bind:checked={values.checkbox} label="Accept terms and conditions" />
+
+<Field bind:value={values.input} placeholder="Input" />
 
 <pre>{JSON.stringify(values, null, 2)}</pre>
