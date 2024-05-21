@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Field from '$lib/components/field/Field.svelte';
+	import Field from '$lib/components/field/field.svelte';
 	import '../app.css';
 
 	const items = [
