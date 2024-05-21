@@ -27,7 +27,7 @@ export type TypeField = (typeof TYPE_FIELD)[keyof typeof TYPE_FIELD] | InputType
 
 type Item = { label?: string; value: string };
 
-export type FieldCheckboxProps = Omit<Checkbox.Props, 'checked'> & {
+export type FieldCheckboxProps = Checkbox.Props & {
 	label?: string;
 	checked?: boolean;
 	selected?: never;
@@ -40,7 +40,7 @@ export type FieldInputProps = Omit<Input.Props, 'type'> & {
 	selected?: never;
 };
 
-export type FieldRadioGroupProps = Omit<RadioGroup.Props, 'type'> & {
+export type FieldRadioGroupProps = RadioGroup.Props & {
 	items?: Item[];
 	label?: never;
 	checked?: never;
