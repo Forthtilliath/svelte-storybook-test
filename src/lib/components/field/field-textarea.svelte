@@ -1,8 +1,8 @@
 <script lang="ts">
 	import * as Textarea from '$lib/components/shared/ui/textarea';
-	import type { FieldTextareaProps } from '.';
+	import type { FieldProps } from './index.js';
 
-	type $$Props = FieldTextareaProps;
+	type $$Props = FieldProps["Textarea"];
 
 	export let value: $$Props['value'] = undefined;
 </script>

@@ -2,9 +2,9 @@
 	import { Label } from '$lib/components/shared/ui/label';
 	import * as RadioGroup from '$lib/components/shared/ui/radio-group';
 	import { uniqueId } from '$lib/utils';
-	import type { FieldRadioGroupProps } from './index.js';
+	import type { FieldProps } from './index.js';
 
-	type $$Props = FieldRadioGroupProps;
+	type $$Props = FieldProps["RadioGroup"];
 
 	export let value: $$Props['value'] = undefined;
 	export let items: $$Props['items'] = undefined;

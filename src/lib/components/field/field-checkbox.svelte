@@ -2,9 +2,9 @@
 	import { Label } from '$lib/components/shared/ui/label';
 	import * as Checkbox from '$lib/components/shared/ui/checkbox';
 	import { uniqueId } from '$lib/utils';
-	import type { FieldCheckboxProps } from './index.js';
+	import type { FieldProps } from './index.js';
 
-	type $$Props = FieldCheckboxProps;
+	type $$Props = FieldProps["Checkbox"];
 
 	export let label: $$Props['label'] = "";
 	export let checked: $$Props['checked'] = undefined;

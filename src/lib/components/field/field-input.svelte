@@ -2,9 +2,9 @@
 	import { Label } from '$lib/components/shared/ui/label';
 	import * as Input from '$lib/components/shared/ui/input';
 	import { uniqueId } from '$lib/utils';
-	import type { FieldInputProps } from '.';
+	import type { FieldProps } from './index.js';
 
-	type $$Props = FieldInputProps;
+	type $$Props = FieldProps["Input"];
 
 	export let type: $$Props['type'];
 	export let label: $$Props['label'] = '';
