@@ -1,7 +1,7 @@
 <script lang="ts" context="module">
 	import type { Meta } from '@storybook/svelte';
 	import Field from './field.svelte';
-	import { backgrounds, injectCode } from '$lib/stories';
+	import { injectCode } from '$lib/stories';
 	import '../../../app.css';
 
 	export const meta = {
