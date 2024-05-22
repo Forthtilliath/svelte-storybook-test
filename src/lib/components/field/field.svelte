@@ -50,7 +50,7 @@
 	export let value: $$Props['value'] = undefined;
 	/**
 	 * The value selected.
-	 * @type {{label: string, value: string}}
+	 * @type {string}
 	 */
 	export let selected: $$Props['selected'] = undefined;
 </script>
