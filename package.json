@@ -51,8 +51,10 @@
   },
   "type": "module",
   "dependencies": {
+    "@internationalized/date": "^3.5.4",
     "bits-ui": "^0.21.9",
     "cmdk-sv": "^0.0.17",
+    "lucide-svelte": "^0.379.0",
     "svelte-radix": "^1.1.0"
   }
 }

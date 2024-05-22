@@ -17,7 +17,8 @@
 		input_lastname: '',
 		input_firstname: '',
 		input_mail: '',
-		input_number: 0
+		input_number: 0,
+		datepicker: undefined
 	};
 </script>
 
@@ -37,5 +38,7 @@
 <Field type="text" bind:value={values.input_firstname} placeholder="Input" label="Prénom" />
 <Field type="email" bind:value={values.input_mail} placeholder="Input" label="Email" />
 <Field type="number" bind:value={values.input_number} label="Age" />
+
+<Field type="datepicker" bind:value={values.datepicker} />
 
 <pre>{JSON.stringify(values, null, 2)}</pre>

@@ -5,8 +5,11 @@ import * as Select from '$lib/components/shared/ui/select';
 import * as Switch from '$lib/components/shared/ui/switch';
 import * as Textarea from '$lib/components/shared/ui/textarea';
 
+import { type DateValue } from '@internationalized/date';
+
 export const TYPE_FIELD = Object.freeze({
 	Checkbox: 'checkbox',
+	DatePicker: 'datepicker',
 	RadioGroup: 'radiogroup',
 	Select: 'select',
 	Switch: 'switch',
@@ -30,6 +33,15 @@ type Item = { label?: string; value: string };
 type FieldCheckboxProps = Checkbox.Props & {
 	label?: string;
 	checked?: boolean;
+	selected?: never;
+};
+
+type FieldDatePickerProps = {
+	locale?: string;
+	//
+	label?: never;
+	value?: DateValue;
+	checked?: never;
 	selected?: never;
 };
 
@@ -67,9 +79,10 @@ type FieldTextareaProps = Textarea.Props & {
 
 export type FieldProps = {
 	Checkbox: FieldCheckboxProps;
+	DatePicker: FieldDatePickerProps;
 	Input: FieldInputProps;
 	RadioGroup: FieldRadioGroupProps;
 	Select: FieldSelectProps;
 	Switch: FieldSwitchProps;
 	Textarea: FieldTextareaProps;
-}
+};
