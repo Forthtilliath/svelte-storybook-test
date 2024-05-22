@@ -36,11 +36,43 @@
 			},
 			selected: {
 				control: 'select',
-				options: ['one', 'two', 'three'],
+				options: ['two', 'green', 'red', 'blue'],
 				mapping: {
-					one: { label: 'One', value: 'one' },
 					two: { label: 'Two', value: 'two' },
-					three: { label: 'Three', value: 'three' }
+					green: { label: 'Green', value: 'green' },
+					red: { label: 'Red', value: 'red' },
+					blue: { label: 'Blue', value: 'blue' }
+				}
+			},
+			placeholder: {
+				control: 'text',
+				description: 'Input placeholder',
+				type: 'string'
+			},
+			label: {
+				control: 'text',
+				description: 'Input label',
+				type: 'string'
+			},
+			items: {
+				control: 'select',
+				description: 'Radiogroup / Select items',
+				//@ts-ignore Type error
+				type: '{label: string, value: string}[]',
+				options: ['one', 'two'],
+				mapping: {
+					one: [
+						{ label: 'One', value: 'one' },
+						{ label: 'Two', value: 'two' },
+						{ label: 'Three', value: 'three' }
+					],
+					two: [
+						{ label: 'Green', value: 'green' },
+						{ label: 'Red', value: 'red' },
+						{ label: 'Yellow', value: 'yellow' },
+						{ label: 'Purple', value: 'purple' },
+						{ label: 'Blue', value: 'blue' }
+					]
 				}
 			}
 		},
