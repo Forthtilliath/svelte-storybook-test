@@ -33,9 +33,25 @@
 		| SwitchProps
 		| TextareaProps;
 
+	/**
+	 * The type of the field. Determines the component used.
+	 * @type {string}
+	 **/
 	export let type: $$Props['type'];
+	/**
+	 * Controls if the field is checked.
+	 * @type {boolean}
+	 */
 	export let checked: $$Props['checked'] = undefined;
+	/**
+	 * Value of the field.
+	 * @type {string}
+	 */
 	export let value: $$Props['value'] = undefined;
+	/**
+	 * The value selected.
+	 * @type {{label: string, value: string}}
+	 */
 	export let selected: $$Props['selected'] = undefined;
 </script>
 
