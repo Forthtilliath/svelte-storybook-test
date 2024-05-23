@@ -30,10 +30,15 @@ export type TypeField = (typeof TYPE_FIELD)[keyof typeof TYPE_FIELD] | InputType
 
 type Item = { label?: string; value: string };
 
-type FieldCheckboxProps = Checkbox.Props & {
+type FieldCheckboxProps = Omit<Checkbox.Props, 'class'> & {
 	label?: string;
 	checked?: boolean;
 	selected?: never;
+	class?: {
+		root?: string;
+		checkbox?: string;
+		label?: string;
+	}
 };
 
 type FieldDatePickerProps = {
