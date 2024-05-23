@@ -10,22 +10,22 @@
 
 	import { TYPE_FIELD, type FieldProps } from './index.js';
 
-	type CheckboxProps = Omit<FieldProps['Checkbox'], 'type'> & {
+	type CheckboxProps = Omit<FieldProps['checkbox'], 'type'> & {
 		type: typeof TYPE_FIELD.Checkbox;
 	};
-	type DatePickerProps = Omit<FieldProps['DatePicker'], 'type'> & {
+	type DatePickerProps = Omit<FieldProps['datepicker'], 'type'> & {
 		type: typeof TYPE_FIELD.DatePicker;
 	};
-	type SwitchProps = Omit<FieldProps['Switch'], 'type'> & {
+	type SwitchProps = Omit<FieldProps['witch'], 'type'> & {
 		type: typeof TYPE_FIELD.Switch;
 	};
-	type RadioGroupProps = FieldProps['RadioGroup'] & {
+	type RadioGroupProps = FieldProps['radiogroup'] & {
 		type: typeof TYPE_FIELD.RadioGroup;
 	};
-	type SelectProps = FieldProps['Select'] & {
+	type SelectProps = FieldProps['select'] & {
 		type: typeof TYPE_FIELD.Select;
 	};
-	type TextareaProps = FieldProps['Textarea'] & {
+	type TextareaProps = FieldProps['textarea'] & {
 		type: typeof TYPE_FIELD.Textarea;
 	};
 	type InputProps = FieldProps['Input'] & {};
@@ -63,7 +63,7 @@
 
 {#if type === TYPE_FIELD.Checkbox}
 	<FieldCheckbox {value} bind:checked {...$$restProps} />
-<!-- {:else if type === TYPE_FIELD.DatePicker}
+	<!-- {:else if type === TYPE_FIELD.DatePicker}
 	<FieldDatapicker bind:value {...$$restProps} /> -->
 {:else if type === TYPE_FIELD.Switch}
 	<FieldSwitch {value} bind:checked {...$$restProps} />

@@ -36,9 +36,9 @@ type FieldCheckboxProps = Omit<Checkbox.Props, 'class'> & {
 	selected?: never;
 	class?: {
 		root?: string;
-		checkbox?: string;
+		input?: string;
 		label?: string;
-	}
+	};
 };
 
 type FieldDatePickerProps = {
@@ -48,46 +48,70 @@ type FieldDatePickerProps = {
 	value?: DateValue;
 	checked?: never;
 	selected?: never;
+	class?: undefined;
 };
 
-type FieldInputProps = Omit<Input.Props, 'type'> & {
+type FieldInputProps = Omit<Input.Props, 'type' | 'class'> & {
 	type: InputTypeField;
 	label?: string;
 	checked?: never;
 	selected?: never;
+	class?: {
+		root?: string;
+		input?: string;
+		label?: string;
+	};
 };
 
-type FieldRadioGroupProps = RadioGroup.Props & {
+type FieldRadioGroupProps = Omit<RadioGroup.Props, 'class'> & {
 	items?: Item[];
 	label?: never;
 	checked?: never;
 	selected?: never;
+	class?: {
+		root?: string;
+		input?: string;
+		label?: string;
+	};
 };
 
-type FieldSelectProps = Select.Props<string, false> & {
+type FieldSelectProps = Omit<Select.Props<string, false>, 'class'> & {
 	label?: string;
 	checked?: never;
 	placeholder?: string;
 	value?: never;
+	class?: {
+		select?: string;
+		option?: string;
+		optionItem?: string;
+	};
 };
 
-type FieldSwitchProps = Switch.Props & {
+type FieldSwitchProps = Omit<Switch.Props, 'class'> & {
 	label?: string;
 	selected?: never;
+	class?: {
+		root?: string;
+		input?: string;
+		label?: string;
+	};
 };
 
-type FieldTextareaProps = Textarea.Props & {
+type FieldTextareaProps = Omit<Textarea.Props, 'class'> & {
 	label?: never;
 	checked?: never;
 	selected?: never;
+	class?: {
+		input?: string;
+	};
 };
 
 export type FieldProps = {
-	Checkbox: FieldCheckboxProps;
-	DatePicker: FieldDatePickerProps;
-	Input: FieldInputProps;
-	RadioGroup: FieldRadioGroupProps;
-	Select: FieldSelectProps;
-	Switch: FieldSwitchProps;
-	Textarea: FieldTextareaProps;
+	checkbox: FieldCheckboxProps;
+	datepicker: FieldDatePickerProps;
+	input: FieldInputProps;
+	radiogroup: FieldRadioGroupProps;
+	select: FieldSelectProps;
+	switch: FieldSwitchProps;
+	textarea: FieldTextareaProps;
 };
