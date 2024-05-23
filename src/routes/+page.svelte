@@ -39,6 +39,6 @@
 <Field type="email" bind:value={values.input_mail} placeholder="Input" label="Email" />
 <Field type="number" bind:value={values.input_number} label="Age" />
 
-<Field type="datepicker" bind:value={values.datepicker} />
+<!-- <Field type="datepicker" bind:value={values.datepicker} /> -->
 
 <pre>{JSON.stringify(values, null, 2)}</pre>

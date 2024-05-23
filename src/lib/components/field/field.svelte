@@ -1,6 +1,7 @@
 <script lang="ts">
 	import FieldCheckbox from './field-checkbox.svelte';
-	import FieldDatapicker from './field-datapicker.svelte';
+	// https://github.com/storybookjs/storybook/issues/27233
+	// import FieldDatapicker from './field-datapicker.svelte';
 	import FieldInput from './field-input.svelte';
 	import FieldRadiogroup from './field-radiogroup.svelte';
 	import FieldSwitch from './field-switch.svelte';
@@ -31,7 +32,7 @@
 
 	type $$Props =
 		| CheckboxProps
-		| DatePickerProps
+		// | DatePickerProps
 		| InputProps
 		| RadioGroupProps
 		| SelectProps
@@ -62,10 +63,10 @@
 
 {#if type === TYPE_FIELD.Checkbox}
 	<FieldCheckbox {value} bind:checked {...$$restProps} />
-	{:else if type === TYPE_FIELD.DatePicker}
-		<FieldDatapicker bind:value {...$$restProps} />
-		{:else if type === TYPE_FIELD.Switch}
-			<FieldSwitch {value} bind:checked {...$$restProps} />
+<!-- {:else if type === TYPE_FIELD.DatePicker}
+	<FieldDatapicker bind:value {...$$restProps} /> -->
+{:else if type === TYPE_FIELD.Switch}
+	<FieldSwitch {value} bind:checked {...$$restProps} />
 {:else if type === TYPE_FIELD.RadioGroup}
 	<FieldRadiogroup bind:value {...$$restProps} />
 {:else if type === TYPE_FIELD.Select}
