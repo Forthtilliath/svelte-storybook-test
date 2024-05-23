@@ -16,7 +16,7 @@
 	type DatePickerProps = Omit<FieldProps['datepicker'], 'type'> & {
 		type: typeof TYPE_FIELD.DatePicker;
 	};
-	type SwitchProps = Omit<FieldProps['witch'], 'type'> & {
+	type SwitchProps = Omit<FieldProps['switch'], 'type'> & {
 		type: typeof TYPE_FIELD.Switch;
 	};
 	type RadioGroupProps = FieldProps['radiogroup'] & {
@@ -28,7 +28,7 @@
 	type TextareaProps = FieldProps['textarea'] & {
 		type: typeof TYPE_FIELD.Textarea;
 	};
-	type InputProps = FieldProps['Input'] & {};
+	type InputProps = FieldProps['input'] & {};
 
 	type $$Props =
 		| CheckboxProps
