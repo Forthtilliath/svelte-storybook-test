@@ -34,8 +34,6 @@
 		class={styles.checkbox}
 	/>
 
-	<!-- <Field type="datepicker" bind:value={values.datepicker} /> -->
-
 	<Field type="text" bind:value={values.input_lastname} placeholder="Input" label="Nom" />
 	<Field type="text" bind:value={values.input_firstname} placeholder="Input" label="Prénom" />
 	<Field type="email" bind:value={values.input_mail} placeholder="Input" label="Email" />
@@ -75,6 +73,8 @@
 		label="Accept terms and conditions"
 		class={styles.switch}
 	/>
+
+	<Field type="datepicker" bind:value={values.datepicker} />
 
 	<pre>{JSON.stringify(values, null, 2)}</pre>
 </main>

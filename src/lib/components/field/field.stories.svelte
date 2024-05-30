@@ -84,6 +84,7 @@
 
 <script lang="ts">
 	import { Story, Template } from '@storybook/addon-svelte-csf';
+	import { styles } from '../../../routes/page.css';
 
 	const items = [
 		{ label: 'One', value: 'one' },
@@ -138,4 +139,10 @@
 	name="Textarea"
 	args={{ type: 'textarea', placeholder: 'Describe your issue' }}
 	parameters={injectCode('<Field type="textarea" placeholder="Describe your issue" />')}
+/>
+
+<Story
+	name="With label & classes"
+	args={{ type: 'text', label: 'Name', class: styles.input }}
+	parameters={injectCode('<Field type="text" label="Name" class={styles.input} />')}
 />
