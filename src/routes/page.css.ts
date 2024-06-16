@@ -14,7 +14,7 @@ export const styles = {
 	},
 	input: {
 		root: 'border border-green-500 pl-2 w-fit rounded',
-		input: 'w-48 bg-green-100 placeholder:text-green-600',
+		input: 'w-48 bg-green-100 placeholder:text-green-600 dark:text-black',
 		label: 'text-green-500 after:content-["_:"]'
 	},
 	radiogroup: {
@@ -23,9 +23,9 @@ export const styles = {
 			'data-[state=checked]:border-green-800 data-[state=checked]:bg-green-300 data-[state=checked]:text-green-800 peer'
 	},
   select: {
-    select: 'w-[300px] font-bold bg-green-500',
-    option: 'bg-green-200 hover:bg-green-200',
-    optionItem: 'data-[highlighted]:bg-green-300 cursor-pointer'
+    select: 'w-[300px] font-bold bg-green-500 dark:text-black',
+    option: 'bg-green-200 hover:bg-green-200 dark:text-black',
+    optionItem: 'data-[highlighted]:bg-green-300 cursor-pointer dark:text-black'
   },
 	switch: {
 		root: 'flex-row-reverse justify-end',
