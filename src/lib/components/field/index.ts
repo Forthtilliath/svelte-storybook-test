@@ -36,6 +36,7 @@ type FieldCheckboxProps = Omit<Checkbox.Props, 'class'> & {
 
 type FieldDatePickerProps = {
 	locale?: string;
+	placeholder?: string;
 	//
 	label?: never;
 	value?: DateValue;

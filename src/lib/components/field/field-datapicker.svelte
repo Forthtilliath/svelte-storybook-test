@@ -8,6 +8,7 @@
 
 	export let locale: string = 'en-US';
 	export let value: DateValue | undefined = undefined;
+	export let placeholder: string = 'Pick a date';
 
 const df = new DateFormatter(locale, {
 	dateStyle: 'long'
@@ -22,7 +23,7 @@ const df = new DateFormatter(locale, {
 			builders={[builder]}
 		>
 			<CalendarIcon class="mr-2 h-4 w-4" />
-			{value ? df.format(value.toDate(getLocalTimeZone())) : 'Pick a date'}
+			{value ? df.format(value.toDate(getLocalTimeZone())) : placeholder}
 		</Button>
 	</Popover.Trigger>
 	<Popover.Content class="w-auto p-0">
