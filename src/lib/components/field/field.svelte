@@ -3,6 +3,7 @@
 	// https://github.com/storybookjs/storybook/issues/27233
 	import FieldDatapicker from './field-datapicker.svelte';
 	import FieldInput from './field-input.svelte';
+	import FieldNumber from './field-input-number';
 	import FieldRadiogroup from './field-radiogroup.svelte';
 	import FieldSwitch from './field-switch.svelte';
 	import FieldSelect from './field-select.svelte';
@@ -15,6 +16,9 @@
 	};
 	type DatePickerProps = Omit<FieldProps['datepicker'], 'type'> & {
 		type: typeof TYPE_FIELD.DatePicker;
+	};
+	type NumberProps = Omit<FieldProps['number'], 'type'> & {
+		type: typeof TYPE_FIELD.Number;
 	};
 	type SwitchProps = Omit<FieldProps['switch'], 'type'> & {
 		type: typeof TYPE_FIELD.Switch;
@@ -34,6 +38,7 @@
 		| CheckboxProps
 		| DatePickerProps
 		| InputProps
+		| NumberProps
 		| RadioGroupProps
 		| SelectProps
 		| SwitchProps
@@ -65,12 +70,14 @@
 	<FieldCheckbox {value} bind:checked {...$$restProps} />
 {:else if type === TYPE_FIELD.DatePicker}
 	<FieldDatapicker bind:value {...$$restProps} />
-{:else if type === TYPE_FIELD.Switch}
-	<FieldSwitch {value} bind:checked {...$$restProps} />
+{:else if type === TYPE_FIELD.Number}
+	<FieldNumber type="text" bind:value {...$$restProps} />
 {:else if type === TYPE_FIELD.RadioGroup}
 	<FieldRadiogroup bind:value {...$$restProps} />
 {:else if type === TYPE_FIELD.Select}
 	<FieldSelect bind:selected {...$$restProps} />
+{:else if type === TYPE_FIELD.Switch}
+	<FieldSwitch {value} bind:checked {...$$restProps} />
 {:else if type === TYPE_FIELD.Textarea}
 	<FieldTextarea bind:value {...$$restProps} />
 {:else}

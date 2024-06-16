@@ -37,7 +37,7 @@
 	<Field type="text" bind:value={values.input_lastname} placeholder="Input" label="Nom" />
 	<Field type="text" bind:value={values.input_firstname} placeholder="Input" label="Prénom" />
 	<Field type="email" bind:value={values.input_mail} placeholder="Input" label="Email" />
-	<Field type="number" bind:value={values.input_number} label="Age" />
+	<Field type="number" bind:value={values.input_number} min="0" label="Age" />
 	<Field
 		type="text"
 		bind:value={values.input_lastname}
@@ -74,7 +74,7 @@
 		class={styles.switch}
 	/>
 
-	<Field type="datepicker" bind:value={values.datepicker} />
+	<Field type="datepicker" bind:value={values.datepicker} locale="fr-FR" />
 
 	<pre>{JSON.stringify(values, null, 2)}</pre>
 </main>

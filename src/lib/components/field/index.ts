@@ -10,21 +10,14 @@ import { type DateValue } from '@internationalized/date';
 export const TYPE_FIELD = Object.freeze({
 	Checkbox: 'checkbox',
 	DatePicker: 'datepicker',
+	Number: 'number',
 	RadioGroup: 'radiogroup',
 	Select: 'select',
 	Switch: 'switch',
 	Textarea: 'textarea'
 });
 
-export type InputTypeField =
-	| 'email'
-	| 'file'
-	| 'number'
-	| 'password'
-	| 'search'
-	| 'tel'
-	| 'text'
-	| 'url';
+export type InputTypeField = 'email' | 'file' | 'password' | 'search' | 'tel' | 'text' | 'url';
 
 export type TypeField = (typeof TYPE_FIELD)[keyof typeof TYPE_FIELD] | InputTypeField;
 
@@ -49,6 +42,18 @@ type FieldDatePickerProps = {
 	checked?: never;
 	selected?: never;
 	class?: undefined;
+};
+
+type FieldNumberProps = Omit<Input.Props, 'type' | 'class'> & {
+	type: 'number';
+	label?: string;
+	checked?: never;
+	selected?: never;
+	class?: {
+		root?: string;
+		input?: string;
+		label?: string;
+	};
 };
 
 type FieldInputProps = Omit<Input.Props, 'type' | 'class'> & {
@@ -110,6 +115,7 @@ export type FieldProps = {
 	checkbox: FieldCheckboxProps;
 	datepicker: FieldDatePickerProps;
 	input: FieldInputProps;
+	number: FieldNumberProps;
 	radiogroup: FieldRadioGroupProps;
 	select: FieldSelectProps;
 	switch: FieldSwitchProps;
