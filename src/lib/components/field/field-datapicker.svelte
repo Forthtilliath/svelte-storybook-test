@@ -6,11 +6,12 @@
 	import { Calendar } from '$lib/components/shared/ui/calendar';
 	import * as Popover from '$lib/components/shared/ui/popover';
 
-	const df = new DateFormatter('en-US', {
-		dateStyle: 'long'
-	});
-
+	export let locale: string = 'en-US';
 	export let value: DateValue | undefined = undefined;
+
+const df = new DateFormatter(locale, {
+	dateStyle: 'long'
+});
 </script>
 
 <Popover.Root>
@@ -25,6 +26,6 @@
 		</Button>
 	</Popover.Trigger>
 	<Popover.Content class="w-auto p-0">
-		<Calendar bind:value initialFocus />
+		<Calendar bind:value />
 	</Popover.Content>
 </Popover.Root>
