@@ -146,3 +146,15 @@
 	args={{ type: 'text', label: 'Name', class: styles.input }}
 	parameters={injectCode('<Field type="text" label="Name" class={styles.input} />')}
 />
+
+<Story
+	name="Datepicker"
+	args={{ type: 'datepicker' }}
+	parameters={injectCode('<Field type="datepicker" />')}
+/>
+
+<Story
+	name="Datepicker with french locale"
+	args={{ type: 'datepicker', locale:"fr-FR", placeholder: "Choisir une date" }}
+	parameters={injectCode('<Field type="datepicker" locale="fr-FR" />')}
+/>
