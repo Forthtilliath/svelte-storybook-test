@@ -1,5 +1,6 @@
 <script lang="ts">
 	import Field from '$lib/components/field/field.svelte';
+	import { Field as FieldV2 } from '$lib/components/field-v2';
 	import '../app.css';
 	import { styles } from './page.css';
 	import { CalendarDate } from '$lib/components/shared/ui/calendar';
@@ -35,11 +36,11 @@
 		class={styles.checkbox}
 	/>
 
-	<Field type="text" bind:value={values.input_lastname} placeholder="Input" label="Nom" />
+	<FieldV2 type="text" bind:value={values.input_lastname} placeholder="Input" label="Nom" />
 	<Field type="text" bind:value={values.input_firstname} placeholder="Input" label="Prénom" />
 	<Field type="email" bind:value={values.input_mail} placeholder="Input" label="Email" />
 	<Field type="number" bind:value={values.input_number} min="0" label="Age" />
-	<Field
+	<FieldV2
 		type="text"
 		bind:value={values.input_lastname}
 		placeholder="Input"
@@ -85,6 +86,7 @@
 		pagedNavigation
 		minValue={new CalendarDate(2024, 5, 15)}
 		maxValue={new CalendarDate(2024, 8, 15)}
+		class={styles.datepicker}
 	/>
 
 	<pre>{JSON.stringify(values, null, 2)}</pre>

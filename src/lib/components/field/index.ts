@@ -38,7 +38,9 @@ type FieldDatePickerProps = Calendar.Props & {
 	label?: never;
 	checked?: never;
 	selected?: never;
-	class?: string;
+	class?: {
+		button?: string;
+	};
 };
 
 type FieldNumberProps = Omit<Input.Props, 'type' | 'class'> & {
