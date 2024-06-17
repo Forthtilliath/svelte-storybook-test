@@ -1,6 +1,6 @@
 <script lang="ts">
 	import Label from './label.svelte';
-	import { cn, uniqueId } from '$lib/utils';
+	import { cn, uniqueId } from './utils';
 	import * as Input from './index.js';
 
 	type $$Props = Input.Props;
