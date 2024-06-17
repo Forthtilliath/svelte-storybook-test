@@ -85,6 +85,7 @@
 <script lang="ts">
 	import { Story, Template } from '@storybook/addon-svelte-csf';
 	import { styles } from '../../../routes/page.css';
+	import { CalendarDate } from '@internationalized/date';
 
 	const items = [
 		{ label: 'One', value: 'one' },
@@ -151,6 +152,12 @@
 	name="Datepicker"
 	args={{ type: 'datepicker' }}
 	parameters={injectCode('<Field type="datepicker" />')}
+/>
+
+<Story
+	name="Datepicker with value and min/max values"
+	args={{ type: 'datepicker', value: new CalendarDate(2024, 5, 20), minValue: new CalendarDate(2024, 5, 15), maxValue: new CalendarDate(2024, 6, 15) }}
+	parameters={injectCode('<Field type="datepicker" value={new CalendarDate(2024, 5, 20)} minValue={new CalendarDate(2024, 5, 15)} maxValue={new CalendarDate(2024, 6, 15)} />')}
 />
 
 <Story
