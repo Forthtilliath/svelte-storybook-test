@@ -1,12 +1,12 @@
 <script lang="ts" context="module">
 	import type { Meta } from '@storybook/svelte';
 	import { injectCode } from './utils';
-	import Input from './field-input.svelte';
-	import './app.css';
+	import Field from '../field.svelte';
+	import '../app.css';
 
 	export const meta = {
 		title: 'Field/Input',
-		component: Input,
+		component: Field,
 		tags: ['autodocs'],
 		argTypes: {
 			type: {
@@ -63,21 +63,24 @@
 				control: 'object',
 				description: 'Input classes',
 				table: {
-					type: { summary: '{root?: string; input?: string; label?: string}' },
+					type: { summary: 'object' },
 					defaultValue: { summary: 'undefined' },
 					category: 'Input Properties'
 				}
-			}
+			},
+			checked: DISABLED_PROPERTY,
+			selected: DISABLED_PROPERTY
 		},
 		args: {
 			type: 'text'
 		}
-	} satisfies Meta<Input>;
+	} satisfies Meta<Field>;
 </script>
 
 <script lang="ts">
 	import { Story, Template } from '@storybook/addon-svelte-csf';
-	import { expect, getByText, userEvent, within } from '@storybook/test';
+	import { expect, within } from '@storybook/test';
+	import { DISABLED_PROPERTY } from '../stories-constants';
 
 	const styles = {
 		root: 'border border-green-500 pl-2 w-fit rounded',
@@ -87,29 +90,73 @@
 </script>
 
 <Template let:args>
-	<Input {...args} />
+	<Field {...args} />
 </Template>
 
-<Story name="Default" args={{ type: 'text' }} parameters={injectCode('<Field type="text" />')} />
+<Story
+	name="Default"
+	args={{ 'data-testId': 'input' }}
+	parameters={injectCode('<Field />')}
+	play={async ({ canvasElement }) => {
+		const canvas = within(canvasElement);
+		const input = canvas.getByTestId('input');
+
+		await expect(input).toBeInTheDocument();
+		await expect(input.getAttribute('type')).toBe('text');
+	}}
+/>
+
+<Story
+	name="Type search"
+	args={{ type: 'search', 'data-testId': 'input' }}
+	parameters={injectCode('<Field type="search" />')}
+	play={async ({ canvasElement }) => {
+		const canvas = within(canvasElement);
+		const input = canvas.getByTestId('input');
+
+		await expect(input).toBeInTheDocument();
+		await expect(input.getAttribute('type')).toBe('search');
+	}}
+/>
+
+<Story
+	name="Type password"
+	args={{ type: 'password', 'data-testId': 'input' }}
+	parameters={injectCode('<Field type="password" />')}
+	play={async ({ canvasElement }) => {
+		const canvas = within(canvasElement);
+		const input = canvas.getByTestId('input');
+
+		await expect(input).toBeInTheDocument();
+		await expect(input.getAttribute('type')).toBe('password');
+	}}
+/>
 
 <Story
 	name="With label"
-	args={{ type: 'text', label: 'Name' }}
-	parameters={injectCode('<Field type="text" label="Name" />')}
+	args={{ label: 'Name', 'data-testId': 'input' }}
+	parameters={injectCode('<Field label="Name" />')}
 	play={async ({ canvasElement }) => {
 		const canvas = within(canvasElement);
+		const input = canvas.getByTestId('input');
+		const label = canvas.getByText('Name');
 
-		await expect(canvas.getByLabelText('Name')).toBeInTheDocument();
+		await expect(input).toBeInTheDocument();
+		await expect(input.getAttribute('type')).toBe('text');
+		await expect(label).toBeInTheDocument();
 	}}
 />
 
 <Story
 	name="With placeholder"
-	args={{ type: 'text', placeholder: 'Name' }}
-	parameters={injectCode('<Field type="text" placeholder="Name" />')}
+	args={{ placeholder: 'Name', 'data-testId': 'input' }}
+	parameters={injectCode('<Field placeholder="Name" />')}
 	play={async ({ canvasElement }) => {
 		const canvas = within(canvasElement);
+		const input = canvas.getByTestId('input');
 
+		await expect(input).toBeInTheDocument();
+		await expect(input.getAttribute('type')).toBe('text');
 		await expect(canvas.getByPlaceholderText('Name')).toBeInTheDocument();
 	}}
 />
