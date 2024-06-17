@@ -1,9 +1,9 @@
 <script lang="ts">
 	import * as Textarea from './textarea';
 	import { cn } from '$lib/utils.js';
-	import type { FieldProps } from './index.js';
+	import type { TextareaProps } from './index.js';
 
-	type $$Props = FieldProps['textarea'];
+	type $$Props = TextareaProps;
 
 	export let value: $$Props['value'] = undefined;
 
