@@ -83,7 +83,7 @@
 
 	const styles = {
 		root: 'flex-row-reverse justify-end',
-		label: 'text-red-500 peer-data-[state=checked]:text-green-500',
+		label: 'text-red-600 peer-data-[state=checked]:text-green-700',
 		input:
 			'data-[state=checked]:border-green-800 data-[state=checked]:bg-green-300 data-[state=checked]:text-green-800 peer'
 	};
