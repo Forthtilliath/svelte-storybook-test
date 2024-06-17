@@ -28,8 +28,8 @@
 <main class="m-4 space-y-4">
 	<h1 class="text-2xl font-bold">Fields</h1>
 
-	<Field type="checkbox" bind:checked={values.checkbox} label="Accept terms and conditions" />
-	<Field
+	<FieldV2 type="checkbox" bind:checked={values.checkbox} label="Accept terms and conditions" />
+	<FieldV2
 		type="checkbox"
 		bind:checked={values.checkbox}
 		label="Accept terms and conditions"

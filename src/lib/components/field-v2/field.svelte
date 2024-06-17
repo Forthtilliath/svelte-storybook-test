@@ -1,5 +1,5 @@
 <script lang="ts">
-	// import FieldCheckbox from './field-checkbox.svelte';
+	import { FieldCheckbox } from './field-checkbox';
 	// import FieldDatapicker from './field-datapicker.svelte';
 	import { FieldInput } from './field-input';
 	// import FieldNumber from './field-input-number';
@@ -65,20 +65,20 @@
 	export let selected: $$Props['selected'] = undefined;
 </script>
 
-<!-- {#if type === TYPE_FIELD.Checkbox}
-	<FieldCheckbox {value} bind:checked {...$$restProps} /> -->
-<!-- {:else if type === TYPE_FIELD.DatePicker}
+{#if type === TYPE_FIELD.Checkbox}
+	<FieldCheckbox {value} bind:checked {...$$restProps} />
+	<!-- {:else if type === TYPE_FIELD.DatePicker}
 	<FieldDatapicker bind:value {...$$restProps} /> -->
-<!-- {:else if type === TYPE_FIELD.Number}
+	<!-- {:else if type === TYPE_FIELD.Number}
 	<FieldNumber type="text" bind:value {...$$restProps} /> -->
-<!-- {:else if type === TYPE_FIELD.RadioGroup}
+	<!-- {:else if type === TYPE_FIELD.RadioGroup}
 	<FieldRadiogroup bind:value {...$$restProps} /> -->
-<!-- {:else if type === TYPE_FIELD.Select}
+	<!-- {:else if type === TYPE_FIELD.Select}
 	<FieldSelect bind:selected {...$$restProps} /> -->
-<!-- {:else if type === TYPE_FIELD.Switch}
+	<!-- {:else if type === TYPE_FIELD.Switch}
 	<FieldSwitch {value} bind:checked {...$$restProps} /> -->
-<!-- {:else if type === TYPE_FIELD.Textarea}
+	<!-- {:else if type === TYPE_FIELD.Textarea}
 	<FieldTextarea bind:value {...$$restProps} /> -->
-<!-- {:else} -->
+{:else}
 	<FieldInput {type} bind:value {...$$restProps} />
-<!-- {/if} -->
+{/if}

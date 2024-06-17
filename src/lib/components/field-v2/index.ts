@@ -1,7 +1,6 @@
-import * as Checkbox from '$lib/components/shared/ui/checkbox';
+import * as Checkbox from './field-checkbox';
 import * as Calendar from '$lib/components/shared/ui/calendar';
-// import * as Input from '$lib/components/shared/ui/input';
-import * as Input from './field-input'
+import * as Input from './field-input';
 import * as RadioGroup from '$lib/components/shared/ui/radio-group';
 import * as Select from '$lib/components/shared/ui/select';
 import * as Switch from '$lib/components/shared/ui/switch';
@@ -13,7 +12,7 @@ export {
 	Root,
 	//
 	Root as Field
-}
+};
 
 export const TYPE_FIELD = Object.freeze({
 	Checkbox: 'checkbox',
@@ -31,16 +30,16 @@ export type TypeField = (typeof TYPE_FIELD)[keyof typeof TYPE_FIELD] | InputType
 
 type Item = { label?: string; value: string };
 
-type FieldCheckboxProps = Omit<Checkbox.Props, 'class'> & {
-	label?: string;
-	checked?: boolean;
-	selected?: never;
-	class?: {
-		root?: string;
-		input?: string;
-		label?: string;
-	};
-};
+// type FieldCheckboxProps = Omit<Checkbox.Props, 'class'> & {
+// 	label?: string;
+// 	checked?: boolean;
+// 	selected?: never;
+// 	class?: {
+// 		root?: string;
+// 		input?: string;
+// 		label?: string;
+// 	};
+// };
 
 type FieldDatePickerProps = Calendar.Props & {
 	placeholder?: string;
@@ -120,7 +119,7 @@ type FieldTextareaProps = Omit<Textarea.Props, 'class'> & {
 };
 
 export type FieldProps = {
-	checkbox: FieldCheckboxProps;
+	checkbox: Checkbox.Props;
 	datepicker: FieldDatePickerProps;
 	input: Input.Props;
 	number: FieldNumberProps;
