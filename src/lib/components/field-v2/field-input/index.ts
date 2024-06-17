@@ -26,7 +26,8 @@ export type InputEvents = {
 export {
 	Root,
 	//
-	Root as Input
+	Root as Input,
+	Root as FieldInput
 };
 
 type InputTypeField = 'email' | 'file' | 'password' | 'search' | 'tel' | 'text' | 'url';
