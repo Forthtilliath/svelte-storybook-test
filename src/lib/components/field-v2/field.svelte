@@ -2,7 +2,7 @@
 	import { FieldCheckbox } from './field-checkbox';
 	// import FieldDatapicker from './field-datapicker.svelte';
 	import { FieldInput } from './field-input';
-	// import FieldNumber from './field-input-number';
+	import { FieldNumber } from './field-number';
 	// import FieldRadiogroup from './field-radiogroup.svelte';
 	// import FieldSwitch from './field-switch.svelte';
 	// import FieldSelect from './field-select.svelte';
@@ -70,8 +70,8 @@
 	<FieldCheckbox {value} bind:checked {...$$restProps} />
 	<!-- {:else if type === TYPE_FIELD.DatePicker}
 	<FieldDatapicker bind:value {...$$restProps} /> -->
-	<!-- {:else if type === TYPE_FIELD.Number}
-	<FieldNumber type="text" bind:value {...$$restProps} /> -->
+{:else if type === TYPE_FIELD.Number}
+	<FieldNumber type="text" bind:value {...$$restProps} />
 	<!-- {:else if type === TYPE_FIELD.RadioGroup}
 	<FieldRadiogroup bind:value {...$$restProps} /> -->
 	<!-- {:else if type === TYPE_FIELD.Select}

@@ -9,6 +9,9 @@
 - [ ] Rendre les composants facilement exportables
 - [ ] Fix types dans : src\routes\page.css.ts
 - [ ] Add label to TextArea
+- [ ] Ajouter la possibilité de <== et ==> dans Number Field
+- [ ] Add custom style sur input number
+- [ ] Ajoute wheel event sur input number
 
 Stories
 - [ ] Séparer Field en plusieurs stories, 1 story par type de champs
