@@ -69,7 +69,8 @@
 				}
 			},
 			checked: DISABLED_PROPERTY,
-			selected: DISABLED_PROPERTY
+			selected: DISABLED_PROPERTY,
+			'data-testId': DISABLED_PROPERTY
 		},
 		args: {
 			type: 'text'

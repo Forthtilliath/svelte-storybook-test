@@ -70,7 +70,8 @@
 			},
 			placeholder: DISABLED_PROPERTY,
 			value: DISABLED_PROPERTY,
-			selected: DISABLED_PROPERTY
+			selected: DISABLED_PROPERTY,
+			'data-testId': DISABLED_PROPERTY
 		}
 	} satisfies Meta<Field>;
 </script>
