@@ -92,6 +92,10 @@
 		{ label: 'Three', value: 'three' }
 	];
 
+	function sleep(ms: number) {
+		return new Promise((resolve) => setTimeout(resolve, ms));
+	}
+
 	async function playTemplate(canvasElement: HTMLElement) {
 		const button = canvasElement.querySelector<HTMLButtonElement>('[data-select-trigger]');
 
@@ -116,12 +120,11 @@
 			// select an item
 			await userEvent.click(items[1]);
 
-			// check if the item is selected & list is not displayed
-			await expect(button)
-				.toHaveTextContent('Two')
-				.then(async () => {
-					await expect(getItems().length).toBe(0);
-				});
+			// check if the item is selected and the list is closed
+			await expect(button).toHaveTextContent('Two');
+			items = getItems();
+			await sleep(100);
+			await expect(getItems().length).toBe(0);
 		}
 
 		return {
