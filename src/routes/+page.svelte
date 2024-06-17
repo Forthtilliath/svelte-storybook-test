@@ -60,8 +60,8 @@
 		class={styles.select}
 	/>
 
-	<Field type="textarea" bind:value={values.textarea} placeholder="Textarea" />
-	<Field
+	<FieldV2 type="textarea" bind:value={values.textarea} placeholder="Textarea" />
+	<FieldV2
 		type="textarea"
 		bind:value={values.textarea}
 		placeholder="Textarea"

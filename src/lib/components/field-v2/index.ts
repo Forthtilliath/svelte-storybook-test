@@ -4,7 +4,7 @@ import * as Input from './field-input';
 import * as RadioGroup from '$lib/components/shared/ui/radio-group';
 import * as Select from '$lib/components/shared/ui/select';
 import * as Switch from '$lib/components/shared/ui/switch';
-import * as Textarea from '$lib/components/shared/ui/textarea';
+import * as Textarea from './field-textarea';
 
 import Root from './field.svelte';
 
@@ -109,14 +109,14 @@ type FieldSwitchProps = Omit<Switch.Props, 'class'> & {
 	};
 };
 
-type FieldTextareaProps = Omit<Textarea.Props, 'class'> & {
-	label?: never;
-	checked?: never;
-	selected?: never;
-	class?: {
-		input?: string;
-	};
-};
+// type FieldTextareaProps = Omit<Textarea.Props, 'class'> & {
+// 	label?: never;
+// 	checked?: never;
+// 	selected?: never;
+// 	class?: {
+// 		input?: string;
+// 	};
+// };
 
 export type FieldProps = {
 	checkbox: Checkbox.Props;
@@ -126,5 +126,5 @@ export type FieldProps = {
 	radiogroup: FieldRadioGroupProps;
 	select: FieldSelectProps;
 	switch: FieldSwitchProps;
-	textarea: FieldTextareaProps;
+	textarea: Textarea.Props;
 };

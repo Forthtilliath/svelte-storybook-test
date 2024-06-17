@@ -37,6 +37,6 @@ export const styles = {
 			'data-[state=checked]:bg-green-300 data-[state=checked]:text-green-800 data-[state=unchecked]:bg-red-300 data-[state=unchecked]:text-red-800 peer'
 	},
 	textarea: {
-		input: 'w-[500]'
+		input: 'w-[300px]'
 	}
 } satisfies StyleFields;

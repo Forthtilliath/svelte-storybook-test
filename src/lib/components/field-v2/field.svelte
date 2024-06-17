@@ -7,6 +7,7 @@
 	// import FieldSwitch from './field-switch.svelte';
 	// import FieldSelect from './field-select.svelte';
 	// import FieldTextarea from './field-textarea.svelte';
+	import { FieldTextarea } from './field-textarea';
 
 	import { TYPE_FIELD, type FieldProps } from './index.js';
 
@@ -77,8 +78,8 @@
 	<FieldSelect bind:selected {...$$restProps} /> -->
 	<!-- {:else if type === TYPE_FIELD.Switch}
 	<FieldSwitch {value} bind:checked {...$$restProps} /> -->
-	<!-- {:else if type === TYPE_FIELD.Textarea}
-	<FieldTextarea bind:value {...$$restProps} /> -->
+{:else if type === TYPE_FIELD.Textarea}
+	<FieldTextarea bind:value {...$$restProps} />
 {:else}
 	<FieldInput {type} bind:value {...$$restProps} />
 {/if}
