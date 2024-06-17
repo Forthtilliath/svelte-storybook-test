@@ -14,14 +14,16 @@
 </script>
 
 <Select.Root bind:selected {...$$restProps}>
-	<Select.Trigger class={cn('w-[180px]', className?.select)}>
+	<Select.Trigger class={cn('w-[180px]', className?.select)} aria-label="Open or close dropdown">
 		<Select.Value {placeholder} />
 	</Select.Trigger>
-	{#if items}
-		<Select.Content class={cn(className?.option)}>
+	<Select.Content class={cn(className?.option)}>
+		{#if items}
 			{#each items as { label, value }}
-				<Select.Item class={cn(className?.optionItem)} {value} role="listitem">{label ?? value}</Select.Item>
+				<Select.Item class={cn(className?.optionItem)} {value} role="listitem">
+					{label ?? value}
+				</Select.Item>
 			{/each}
-		</Select.Content>
-	{/if}
+		{/if}
+	</Select.Content>
 </Select.Root>
