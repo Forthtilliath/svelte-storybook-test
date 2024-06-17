@@ -31,7 +31,7 @@ export {
 };
 
 type InputTypeField = 'email' | 'file' | 'password' | 'search' | 'tel' | 'text' | 'url';
-type InputProps = Omit<HTMLInputAttributes, 'type' | 'class'> & {
+type Props = Omit<HTMLInputAttributes, 'type' | 'class'> & {
 	type: InputTypeField;
 	label?: string;
 	checked?: never;
@@ -44,8 +44,8 @@ type InputProps = Omit<HTMLInputAttributes, 'type' | 'class'> & {
 };
 
 export type {
-	InputProps,
+	Props,
 	InputTypeField,
 	//
-	InputProps as Props
+	Props as InputProps
 };
