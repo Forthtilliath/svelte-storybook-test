@@ -5,7 +5,7 @@
 	import { FieldNumber } from './field-number';
 	// import FieldRadiogroup from './field-radiogroup.svelte';
 	// import FieldSwitch from './field-switch.svelte';
-	// import FieldSelect from './field-select.svelte';
+	import { FieldSelect } from './field-select';
 	// import FieldTextarea from './field-textarea.svelte';
 	import { FieldTextarea } from './field-textarea';
 
@@ -68,16 +68,16 @@
 
 {#if type === TYPE_FIELD.Checkbox}
 	<FieldCheckbox {value} bind:checked {...$$restProps} />
-	<!-- {:else if type === TYPE_FIELD.DatePicker}
-	<FieldDatapicker bind:value {...$$restProps} /> -->
+{:else if type === TYPE_FIELD.DatePicker}
+	<!-- <FieldDatapicker bind:value {...$$restProps} /> -->
 {:else if type === TYPE_FIELD.Number}
 	<FieldNumber type="text" bind:value {...$$restProps} />
-	<!-- {:else if type === TYPE_FIELD.RadioGroup}
-	<FieldRadiogroup bind:value {...$$restProps} /> -->
-	<!-- {:else if type === TYPE_FIELD.Select}
-	<FieldSelect bind:selected {...$$restProps} /> -->
-	<!-- {:else if type === TYPE_FIELD.Switch}
-	<FieldSwitch {value} bind:checked {...$$restProps} /> -->
+{:else if type === TYPE_FIELD.RadioGroup}
+	<!-- <FieldRadiogroup bind:value {...$$restProps} /> -->
+{:else if type === TYPE_FIELD.Select}
+	<FieldSelect bind:selected {...$$restProps} />
+{:else if type === TYPE_FIELD.Switch}
+	<!-- <FieldSwitch {value} bind:checked {...$$restProps} /> -->
 {:else if type === TYPE_FIELD.Textarea}
 	<FieldTextarea bind:value {...$$restProps} />
 {:else}

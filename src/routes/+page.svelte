@@ -51,8 +51,8 @@
 	<Field type="radiogroup" bind:value={values.radiogroup} {items} />
 	<Field type="radiogroup" bind:value={values.radiogroup} {items} class={styles.radiogroup} />
 
-	<Field type="select" bind:selected={values.select} {items} placeholder="Select" />
-	<Field
+	<FieldV2 type="select" bind:selected={values.select} {items} placeholder="Select" />
+	<FieldV2
 		type="select"
 		bind:selected={values.select}
 		{items}

@@ -12,6 +12,8 @@
 - [ ] Ajouter la possibilité de <== et ==> dans Number Field
 - [ ] Add custom style sur input number
 - [ ] Ajoute wheel event sur input number
+- [ ] Add label to Select
+- [ ] Field Checkbox test click & checked
 
 Stories
 - [ ] Séparer Field en plusieurs stories, 1 story par type de champs

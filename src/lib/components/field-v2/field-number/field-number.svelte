@@ -50,8 +50,6 @@
 
 		return fn(a, b);
 	}
-
-	$: value
 </script>
 
 <div class="relative flex max-w-[8rem] items-center">
