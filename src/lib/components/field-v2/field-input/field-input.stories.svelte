@@ -91,7 +91,7 @@
 </script>
 
 <Template let:args>
-	<Field {...args} />
+	<Field value="John" {...args} />
 </Template>
 
 <Story
