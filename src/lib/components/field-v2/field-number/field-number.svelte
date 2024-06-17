@@ -34,7 +34,6 @@
 	}
 
 	function onInput(e: $$Events['input']) {
-		console.log(e)
 		isDefined(min, 'Min must be defined');
 		isDefined(max, 'Max must be defined');
 
