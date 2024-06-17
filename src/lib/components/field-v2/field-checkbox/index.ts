@@ -1,5 +1,5 @@
 import Root from './field-checkbox.svelte';
-import type { CheckboxProps } from 'bits-ui';
+import type { CheckboxProps } from './checkbox';
 
 export {
 	Root,

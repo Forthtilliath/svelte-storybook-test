@@ -1,6 +1,6 @@
 <script lang="ts">
-	import Label from './label.svelte';
-	import Checkbox from './checkbox.svelte';
+	import { Label } from './label';
+	import { Checkbox } from './checkbox';
 	import { cn, uniqueId } from './utils';
 	import { type Props } from './index.js';
 
