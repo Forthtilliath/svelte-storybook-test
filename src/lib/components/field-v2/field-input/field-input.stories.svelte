@@ -68,9 +68,16 @@
 					category: 'Input Properties'
 				}
 			},
+			'aria-label': {
+				control: 'text',
+				description: 'Important when input has no label',
+				table: {
+					type: { summary: 'string' },
+					defaultValue: { summary: 'undefined' }
+				}
+			},
 			checked: DISABLED_PROPERTY,
-			selected: DISABLED_PROPERTY,
-			'data-testId': DISABLED_PROPERTY
+			selected: DISABLED_PROPERTY
 		},
 		args: {
 			type: 'text'
@@ -86,17 +93,17 @@
 	const styles = {
 		root: 'border border-green-500 pl-2 w-fit rounded',
 		input: 'w-60 bg-green-100 placeholder:text-green-600 dark:text-green-900',
-		label: 'text-green-500'
+		label: 'text-green-700'
 	};
 </script>
 
 <Template let:args>
-	<Field value="John" {...args} />
+	<Field data-testId="input" value="John" {...args} />
 </Template>
 
 <Story
 	name="Default"
-	args={{ 'data-testId': 'input' }}
+	args={{}}
 	parameters={injectCode('<Field />')}
 	play={async ({ canvasElement }) => {
 		const canvas = within(canvasElement);
@@ -109,7 +116,7 @@
 
 <Story
 	name="Type search"
-	args={{ type: 'search', 'data-testId': 'input' }}
+	args={{ type: 'search' }}
 	parameters={injectCode('<Field type="search" />')}
 	play={async ({ canvasElement }) => {
 		const canvas = within(canvasElement);
@@ -122,7 +129,7 @@
 
 <Story
 	name="Type password"
-	args={{ type: 'password', 'data-testId': 'input' }}
+	args={{ type: 'password' }}
 	parameters={injectCode('<Field type="password" />')}
 	play={async ({ canvasElement }) => {
 		const canvas = within(canvasElement);
@@ -135,7 +142,7 @@
 
 <Story
 	name="With label"
-	args={{ label: 'Name', 'data-testId': 'input' }}
+	args={{ label: 'Name' }}
 	parameters={injectCode('<Field label="Name" />')}
 	play={async ({ canvasElement }) => {
 		const canvas = within(canvasElement);
@@ -150,7 +157,7 @@
 
 <Story
 	name="With placeholder"
-	args={{ placeholder: 'Name', 'data-testId': 'input' }}
+	args={{ placeholder: 'Name' }}
 	parameters={injectCode('<Field placeholder="Name" />')}
 	play={async ({ canvasElement }) => {
 		const canvas = within(canvasElement);
@@ -168,9 +175,11 @@
 	parameters={injectCode('<Field type="text" label="Name" class={styles} />')}
 	play={async ({ canvasElement }) => {
 		const canvas = within(canvasElement);
+		const input = canvas.getByTestId('input');
 
+		await expect(input).toBeInTheDocument();
 		await expect(canvas.getByText('Name').parentElement).toHaveClass(styles.root);
 		await expect(canvas.getByText('Name')).toHaveClass(styles.label);
-		await expect(canvas.getByDisplayValue('')).toHaveClass(styles.input);
+		await expect(canvas.getByDisplayValue('John')).toHaveClass(styles.input);
 	}}
 />
