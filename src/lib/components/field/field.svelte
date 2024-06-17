@@ -1,6 +1,5 @@
 <script lang="ts">
 	import FieldCheckbox from './field-checkbox.svelte';
-	// https://github.com/storybookjs/storybook/issues/27233
 	import FieldDatapicker from './field-datapicker.svelte';
 	import FieldInput from './field-input.svelte';
 	import FieldNumber from './field-input-number';

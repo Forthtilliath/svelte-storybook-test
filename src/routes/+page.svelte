@@ -2,6 +2,7 @@
 	import Field from '$lib/components/field/field.svelte';
 	import '../app.css';
 	import { styles } from './page.css';
+	import { CalendarDate } from '$lib/components/shared/ui/calendar';
 
 	const items = [
 		{ label: 'One', value: 'one' },
@@ -74,7 +75,17 @@
 		class={styles.switch}
 	/>
 
-	<Field type="datepicker" bind:value={values.datepicker} locale="fr-FR" />
+	<Field type="datepicker" bind:value={values.datepicker} locale="fr-FR" weekdayFormat="narrow" />
+
+	<Field
+		type="datepicker"
+		bind:value={values.datepicker}
+		numberOfMonths={2}
+		fixedWeeks
+		pagedNavigation
+		minValue={new CalendarDate(2024, 5, 15)}
+		maxValue={new CalendarDate(2024, 8, 15)}
+	/>
 
 	<pre>{JSON.stringify(values, null, 2)}</pre>
 </main>

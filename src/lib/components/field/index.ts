@@ -1,11 +1,10 @@
 import * as Checkbox from '$lib/components/shared/ui/checkbox';
+import * as Calendar from '$lib/components/shared/ui/calendar';
 import * as Input from '$lib/components/shared/ui/input';
 import * as RadioGroup from '$lib/components/shared/ui/radio-group';
 import * as Select from '$lib/components/shared/ui/select';
 import * as Switch from '$lib/components/shared/ui/switch';
 import * as Textarea from '$lib/components/shared/ui/textarea';
-
-import { type DateValue } from '@internationalized/date';
 
 export const TYPE_FIELD = Object.freeze({
 	Checkbox: 'checkbox',
@@ -34,15 +33,12 @@ type FieldCheckboxProps = Omit<Checkbox.Props, 'class'> & {
 	};
 };
 
-type FieldDatePickerProps = {
-	locale?: string;
+type FieldDatePickerProps = Calendar.Props & {
 	placeholder?: string;
-	//
 	label?: never;
-	value?: DateValue;
 	checked?: never;
 	selected?: never;
-	class?: undefined;
+	class?: string;
 };
 
 type FieldNumberProps = Omit<Input.Props, 'type' | 'class'> & {
