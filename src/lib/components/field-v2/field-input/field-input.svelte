@@ -1,9 +1,10 @@
 <script lang="ts">
 	import Label from './label.svelte';
+	import Input from './input.svelte';
+	import { type Props } from './index.js';
 	import { cn, uniqueId } from './utils';
-	import * as Input from './index.js';
 
-	type $$Props = Input.Props;
+	type $$Props = Props;
 
 	export let type: $$Props['type'];
 	export let label: $$Props['label'] = '';
@@ -16,5 +17,5 @@
 
 <div class={cn('flex items-center space-x-2', className?.root)}>
 	<Label for={id} class={cn(className?.label)}>{label}</Label>
-	<Input.Root {type} {id} bind:value class={cn(className?.input)} {...$$restProps} />
+	<Input {type} {id} bind:value class={cn(className?.input)} {...$$restProps} />
 </div>

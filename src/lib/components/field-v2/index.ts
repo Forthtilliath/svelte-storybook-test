@@ -1,6 +1,7 @@
 import * as Checkbox from '$lib/components/shared/ui/checkbox';
 import * as Calendar from '$lib/components/shared/ui/calendar';
-import * as Input from '$lib/components/shared/ui/input';
+// import * as Input from '$lib/components/shared/ui/input';
+import * as Input from './field-input'
 import * as RadioGroup from '$lib/components/shared/ui/radio-group';
 import * as Select from '$lib/components/shared/ui/select';
 import * as Switch from '$lib/components/shared/ui/switch';
@@ -63,17 +64,17 @@ type FieldNumberProps = Omit<Input.Props, 'type' | 'class'> & {
 	};
 };
 
-type FieldInputProps = Omit<Input.Props, 'type' | 'class'> & {
-	type: InputTypeField;
-	label?: string;
-	checked?: never;
-	selected?: never;
-	class?: {
-		root?: string;
-		input?: string;
-		label?: string;
-	};
-};
+// type FieldInputProps = Omit<Input.Props, 'type' | 'class'> & {
+// 	type: InputTypeField;
+// 	label?: string;
+// 	checked?: never;
+// 	selected?: never;
+// 	class?: {
+// 		root?: string;
+// 		input?: string;
+// 		label?: string;
+// 	};
+// };
 
 type FieldRadioGroupProps = Omit<RadioGroup.Props, 'class'> & {
 	items?: Item[];
@@ -121,7 +122,7 @@ type FieldTextareaProps = Omit<Textarea.Props, 'class'> & {
 export type FieldProps = {
 	checkbox: FieldCheckboxProps;
 	datepicker: FieldDatePickerProps;
-	input: FieldInputProps;
+	input: Input.Props;
 	number: FieldNumberProps;
 	radiogroup: FieldRadioGroupProps;
 	select: FieldSelectProps;

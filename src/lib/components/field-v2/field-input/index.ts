@@ -1,4 +1,4 @@
-import Root from './input.svelte';
+import Root from './field-input.svelte';
 import type { HTMLInputAttributes } from 'svelte/elements';
 
 export type FormInputEvent<T extends Event = Event> = T & {
