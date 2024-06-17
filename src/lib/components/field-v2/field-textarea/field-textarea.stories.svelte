@@ -68,9 +68,16 @@
 					category: 'Input Properties'
 				}
 			},
+			'aria-label': {
+				control: 'text',
+				description: 'Important when input has no label',
+				table: {
+					type: { summary: 'string' },
+					defaultValue: { summary: 'undefined' }
+				}
+			},
 			checked: DISABLED_PROPERTY,
-			selected: DISABLED_PROPERTY,
-			'data-testId': DISABLED_PROPERTY
+			selected: DISABLED_PROPERTY
 		}
 	} satisfies Meta<Field>;
 </script>
@@ -86,12 +93,12 @@
 </script>
 
 <Template let:args>
-	<Field {...args} />
+	<Field data-testId="textarea" {...args} />
 </Template>
 
 <Story
 	name="Default"
-	args={{ type: 'textarea', 'data-testId': 'textarea' }}
+	args={{ type: 'textarea' }}
 	parameters={injectCode('<Field type="textarea" />')}
 	play={async ({ canvasElement }) => {
 		const canvas = within(canvasElement);
@@ -116,7 +123,7 @@
 
 <Story
 	name="With placeholder"
-	args={{ type: 'textarea', placeholder: 'Description', 'data-testId': 'textarea' }}
+	args={{ type: 'textarea', placeholder: 'Description' }}
 	parameters={injectCode('<Field type="textarea" placeholder="Description" />')}
 	play={async ({ canvasElement }) => {
 		const canvas = within(canvasElement);
@@ -129,7 +136,7 @@
 
 <Story
 	name="With styles"
-	args={{ type: 'textarea', class: styles, 'data-testId': 'textarea' }}
+	args={{ type: 'textarea', class: styles }}
 	parameters={injectCode('<Field type="textarea" class={styles} />')}
 	play={async ({ canvasElement }) => {
 		const canvas = within(canvasElement);
