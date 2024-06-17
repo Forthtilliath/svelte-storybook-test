@@ -7,6 +7,7 @@
 - [ ] Ajouter des tests pour les champs de formulaire
 - [ ] Revoir la structure des fichiers
 - [ ] Rendre les composants facilement exportables
+- [ ] Fix types dans : src\routes\page.css.ts
 
 Stories
 - [ ] Séparer Field en plusieurs stories, 1 story par type de champs
