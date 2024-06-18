@@ -34,6 +34,21 @@
 - [ ] Ajouter une prop pour search
 - [ ] Ajouter une prop pour multiple selected
 - [ ] Ajouter des groups : https://ui.shadcn.com/docs/components/select#scrollable
+- [ ] Accepter string[] pour les items => label et value
+```ts
+type ItemWithLabelAndValue = { label: string; value: string };
+type Item =ItemWithLabelAndValue | string;
+type WithGroups = Record<string, Item[]>;
+
+if( isArray(items) ) {
+  // No group labels
+  if( isStrings(items) ) {
+    // Convertir string[] en ItemWithLabelAndValue[]
+  }
+} else {
+  // Group labels
+}
+```
 
 ### Number
 - [x] Bouton input number avec bouton - et +
