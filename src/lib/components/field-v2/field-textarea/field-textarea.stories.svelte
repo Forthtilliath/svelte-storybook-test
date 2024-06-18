@@ -1,6 +1,6 @@
 <script lang="ts" context="module">
 	import type { Meta } from '@storybook/svelte';
-	import { injectCode } from './utils';
+	import { injectCode } from '../utils';
 	import Field from '../field.svelte';
 	import '../app.css';
 

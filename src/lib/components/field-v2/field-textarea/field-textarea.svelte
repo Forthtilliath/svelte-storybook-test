@@ -1,6 +1,6 @@
 <script lang="ts">
 	import * as Textarea from './textarea';
-	import { cn } from '$lib/utils.js';
+	import { cn } from '../utils';
 	import type { TextareaProps } from './index.js';
 
 	type $$Props = TextareaProps;
