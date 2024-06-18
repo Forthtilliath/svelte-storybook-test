@@ -48,8 +48,8 @@
 		class={styles.input}
 	/>
 
-	<Field type="radiogroup" bind:value={values.radiogroup} {items} />
-	<Field type="radiogroup" bind:value={values.radiogroup} {items} class={styles.radiogroup} />
+	<FieldV2 type="radiogroup" bind:value={values.radiogroup} {items} />
+	<FieldV2 type="radiogroup" bind:value={values.radiogroup} {items} class={styles.radiogroup} />
 
 	<FieldV2 type="select" bind:selected={values.select} {items} placeholder="Select" />
 	<FieldV2

@@ -3,7 +3,7 @@
 	// import FieldDatapicker from './field-datapicker.svelte';
 	import { FieldInput } from './field-input';
 	import { FieldNumber } from './field-number';
-	// import FieldRadiogroup from './field-radiogroup.svelte';
+	import { FieldRadioGroup } from './field-radiogroup';
 	import { FieldSwitch } from './field-switch';
 	import { FieldSelect } from './field-select';
 	import { FieldTextarea } from './field-textarea';
@@ -72,7 +72,7 @@
 {:else if type === TYPE_FIELD.Number}
 	<FieldNumber type="text" bind:value {...$$restProps} />
 {:else if type === TYPE_FIELD.RadioGroup}
-	<!-- <FieldRadiogroup bind:value {...$$restProps} /> -->
+	<FieldRadioGroup bind:value {...$$restProps} />
 {:else if type === TYPE_FIELD.Select}
 	<FieldSelect bind:selected {...$$restProps} />
 {:else if type === TYPE_FIELD.Switch}
