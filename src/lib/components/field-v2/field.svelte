@@ -4,9 +4,8 @@
 	import { FieldInput } from './field-input';
 	import { FieldNumber } from './field-number';
 	// import FieldRadiogroup from './field-radiogroup.svelte';
-	// import FieldSwitch from './field-switch.svelte';
+	import { FieldSwitch } from './field-switch';
 	import { FieldSelect } from './field-select';
-	// import FieldTextarea from './field-textarea.svelte';
 	import { FieldTextarea } from './field-textarea';
 
 	import { TYPE_FIELD, type FieldProps } from './index.js';
@@ -77,7 +76,7 @@
 {:else if type === TYPE_FIELD.Select}
 	<FieldSelect bind:selected {...$$restProps} />
 {:else if type === TYPE_FIELD.Switch}
-	<!-- <FieldSwitch {value} bind:checked {...$$restProps} /> -->
+	<FieldSwitch {value} bind:checked {...$$restProps} />
 {:else if type === TYPE_FIELD.Textarea}
 	<FieldTextarea bind:value {...$$restProps} />
 {:else}

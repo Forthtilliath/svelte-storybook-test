@@ -68,8 +68,8 @@
 		class={styles.textarea}
 	/>
 
-	<Field type="switch" bind:checked={values.switch} label="Accept terms and conditions" />
-	<Field
+	<FieldV2 type="switch" bind:checked={values.switch} label="Accept terms and conditions" />
+	<FieldV2
 		type="switch"
 		bind:checked={values.switch}
 		label="Accept terms and conditions"
