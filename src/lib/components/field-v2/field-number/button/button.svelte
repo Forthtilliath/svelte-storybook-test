@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { cn } from '$lib/utils.js';
+	import { cn } from '../../utils';
 	import { buttonVariants, type ButtonEvents, type ButtonProps } from './index.js';
 	type $$Props = ButtonProps;
 	type $$Events = ButtonEvents;

@@ -1,7 +1,8 @@
 <script lang="ts">
 	import { Button } from './button';
-	import { Input, type InputEvents, type InputProps } from './input';
-	import { isDefined } from './utils';
+	import { Input, type InputEvents } from './input';
+	import { isDefined } from '../utils';
+	import type { InputProps } from './index.js';
 
 	type $$Props = InputProps;
 	type $$Events = InputEvents;

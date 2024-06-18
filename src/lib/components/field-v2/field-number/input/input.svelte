@@ -1,5 +1,6 @@
 <script lang="ts">
-	import type { InputEvents, InputProps } from "./index.js";
+	import type { InputProps } from "../index.js";
+	import type { InputEvents } from "./index.js";
 
 	type $$Props = InputProps;
 	type $$Events = InputEvents;
