@@ -37,8 +37,8 @@
 	/>
 
 	<FieldV2 type="text" bind:value={values.input_lastname} placeholder="Input" label="Nom" />
-	<Field type="text" bind:value={values.input_firstname} placeholder="Input" label="Prénom" />
-	<Field type="email" bind:value={values.input_mail} placeholder="Input" label="Email" />
+	<FieldV2 type="text" bind:value={values.input_firstname} placeholder="Input" label="Prénom" />
+	<FieldV2 type="email" bind:value={values.input_mail} placeholder="Input" label="Email" />
 	<FieldV2 type="number" bind:value={values.input_number} min="0" label="Age" />
 	<FieldV2
 		type="text"
@@ -76,9 +76,9 @@
 		class={styles.switch}
 	/>
 
-	<Field type="datepicker" bind:value={values.datepicker} locale="fr-FR" weekdayFormat="narrow" />
+	<FieldV2 type="datepicker" bind:value={values.datepicker} locale="fr-FR" weekdayFormat="narrow" />
 
-	<Field
+	<FieldV2
 		type="datepicker"
 		bind:value={values.datepicker}
 		numberOfMonths={2}

@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { FieldCheckbox } from './field-checkbox';
-	// import FieldDatapicker from './field-datapicker.svelte';
+	import { FieldDatepicker } from './field-datepicker';
 	import { FieldInput } from './field-input';
 	import { FieldNumber } from './field-number';
 	import { FieldRadioGroup } from './field-radiogroup';
@@ -68,7 +68,7 @@
 {#if type === TYPE_FIELD.Checkbox}
 	<FieldCheckbox {value} bind:checked {...$$restProps} />
 {:else if type === TYPE_FIELD.DatePicker}
-	<!-- <FieldDatapicker bind:value {...$$restProps} /> -->
+	<FieldDatepicker bind:value {...$$restProps} />
 {:else if type === TYPE_FIELD.Number}
 	<FieldNumber type="text" bind:value {...$$restProps} />
 {:else if type === TYPE_FIELD.RadioGroup}
