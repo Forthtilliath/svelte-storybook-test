@@ -69,8 +69,7 @@
 				}
 			},
 			checked: DISABLED_PROPERTY,
-			selected: DISABLED_PROPERTY,
-			'data-testId': DISABLED_PROPERTY
+			selected: DISABLED_PROPERTY
 		},
 		args: {
 			type: 'text'
@@ -80,7 +79,7 @@
 
 <script lang="ts">
 	import { Story, Template } from '@storybook/addon-svelte-csf';
-	import { expect, fireEvent, userEvent, within } from '@storybook/test';
+	import { expect, fireEvent, userEvent } from '@storybook/test';
 	import { DISABLED_PROPERTY } from '../stories-constants';
 
 	const styles = {
@@ -116,12 +115,12 @@
 </script>
 
 <Template let:args>
-	<Field {...args} />
+	<Field type="number" {...args} />
 </Template>
 
 <Story
 	name="Default"
-	args={{ type: 'number' }}
+	args={{}}
 	parameters={injectCode('<Field type="number" />')}
 	play={async ({ canvasElement }) => {
 		const { input, buttonMinus, buttonPlus } = await playTemplate(canvasElement);
@@ -142,7 +141,7 @@
 
 <Story
 	name="With min and max value"
-	args={{ type: 'number', min: 0, max: 3 }}
+	args={{ min: 0, max: 3 }}
 	parameters={injectCode('<Field type="number" min={0} max={10} />')}
 	play={async ({ canvasElement }) => {
 		const { input, buttonMinus, buttonPlus } = await playTemplate(canvasElement);
