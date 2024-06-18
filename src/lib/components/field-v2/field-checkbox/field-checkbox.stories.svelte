@@ -85,7 +85,7 @@
 		root: 'flex-row-reverse justify-end',
 		label: 'text-red-600 peer-data-[state=checked]:text-green-700',
 		input:
-			'data-[state=checked]:border-green-800 data-[state=checked]:bg-green-300 data-[state=checked]:text-green-800 peer'
+			'data-[state=unchecked]:border-red-600 data-[state=checked]:border-green-800 data-[state=checked]:bg-green-800 data-[state=checked]:text-green-800 peer'
 	};
 </script>
 
