@@ -1,19 +1,20 @@
-<script lang="ts">
+<script lang="ts" generics="Multiple extends boolean = false">
 	import * as Select from './select';
 	import { cn } from '../utils';
 	import type { Props } from './index.js';
 
-	type $$Props = Props;
+	type $$Props = Props<Multiple>;
 
 	export let selected: $$Props['selected'] = undefined;
 	export let placeholder: $$Props['placeholder'] = undefined;
 	export let items: $$Props['items'] = [];
+	export let multiple: $$Props['multiple'] = false as Multiple;
 
 	let className: $$Props['class'] = undefined;
 	export { className as class };
 </script>
 
-<Select.Root bind:selected {...$$restProps}>
+<Select.Root bind:selected {multiple} {...$$restProps}>
 	<Select.Trigger class={cn('w-[180px]', className?.select)} aria-label="Open or close dropdown">
 		<Select.Value {placeholder} />
 	</Select.Trigger>

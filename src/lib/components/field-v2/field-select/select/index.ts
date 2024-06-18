@@ -35,6 +35,7 @@ export {
 
 export type {
 	SelectProps,
+	Selected,
 	//
 	SelectProps as Props
 } from 'bits-ui';

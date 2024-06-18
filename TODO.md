@@ -32,7 +32,7 @@
 ### Select
 - [ ] Ajouter le label
 - [ ] Ajouter une prop pour search
-- [ ] Ajouter une prop pour multiple selected
+- [x] Ajouter une prop pour multiple selected
 - [ ] Ajouter des groups : https://ui.shadcn.com/docs/components/select#scrollable
 - [ ] Accepter string[] pour les items => label et value
 ```ts

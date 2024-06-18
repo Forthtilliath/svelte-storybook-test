@@ -3,6 +3,17 @@
 	import '../app.css';
 	import { styles } from './page.css';
 	import { CalendarDate } from '$lib/components/field-v2/field-datepicker/calendar';
+	import { type Selected } from '$lib/components/field-v2/field-select';
+
+	// const templates = ['default', 'template-1', 'template-2', 'template-3', 'template-4'];
+	const templates = [
+		{ value: 'default' },
+		{ value: 'template-1' },
+		{ value: 'template-2' },
+		{ value: 'template-3' },
+		{ value: 'template-4' }
+	];
+	let selectedTemplates: Selected<string> = templates[0];
 
 	const items = [
 		{ label: 'One', value: 'one' },
@@ -25,7 +36,14 @@
 </script>
 
 <main class="m-4 space-y-4">
-	<h1 class="text-2xl font-bold">Fields</h1>
+	<h1 class="text-center text-4xl font-bold">Form examples with differents templates</h1>
+
+	<Field
+		type="select"
+		bind:selected={selectedTemplates}
+		items={templates}
+		placeholder="Select a template"
+	/>
 
 	<Field type="checkbox" bind:checked={values.checkbox} label="Accept terms and conditions" />
 	<Field
