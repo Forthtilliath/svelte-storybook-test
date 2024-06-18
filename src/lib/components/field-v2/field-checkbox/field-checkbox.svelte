@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { Label } from './label';
 	import { Checkbox } from './checkbox';
-	import { cn, uniqueId } from './utils';
+	import { cn, uniqueId } from '../utils';
 	import { type Props } from './index.js';
 
 	type $$Props = Props;

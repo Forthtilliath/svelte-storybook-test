@@ -2,7 +2,7 @@
 	import { Label } from './label';
 	import { Input } from './input';
 	import { type Props } from './index.js';
-	import { cn, uniqueId } from './utils';
+	import { cn, uniqueId } from '../utils';
 
 	type $$Props = Props;
 
