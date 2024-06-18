@@ -1,6 +1,6 @@
 <script lang="ts">
 	import * as Select from './select';
-	import { cn } from './utils.js';
+	import { cn } from '../utils';
 	import type { Props } from './index.js';
 
 	type $$Props = Props;
@@ -17,13 +17,13 @@
 	<Select.Trigger class={cn('w-[180px]', className?.select)} aria-label="Open or close dropdown">
 		<Select.Value {placeholder} />
 	</Select.Trigger>
-	<Select.Content class={cn(className?.option)}>
-		{#if items}
+	{#if items}
+		<Select.Content class={cn(className?.option)}>
 			{#each items as { label, value }}
 				<Select.Item class={cn(className?.optionItem)} {value} role="listitem">
 					{label ?? value}
 				</Select.Item>
 			{/each}
-		{/if}
-	</Select.Content>
+		</Select.Content>
+	{/if}
 </Select.Root>
