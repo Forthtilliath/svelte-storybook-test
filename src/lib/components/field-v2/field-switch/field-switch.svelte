@@ -4,8 +4,7 @@
 	import { cn, uniqueId } from '../utils';
 	import type { Props } from './index.js';
 
-	type $$Props = 	Props;
-	;
+	type $$Props = Props;
 
 	export let label: $$Props['label'] = '';
 	export let checked: $$Props['checked'] = undefined;
@@ -16,6 +15,12 @@
 </script>
 
 <div class={cn('flex items-center gap-2', className?.root)}>
-	<Switch.Root {id} bind:checked class={cn(className?.input)} {...$$restProps} />
+	<Switch.Root
+		{id}
+		bind:checked
+		class={cn(className?.input)}
+		aria-label="switch"
+		{...$$restProps}
+	/>
 	<Label for={id} class={cn(className?.label)}>{label}</Label>
 </div>
