@@ -33,7 +33,7 @@
 - [ ] Ajouter le label
 - [ ] Ajouter une prop pour search
 - [ ] Ajouter une prop pour multiple selected
-- [ ] Possibilité d'avoir des séparateurs ?
+- [ ] Ajouter des groups : https://ui.shadcn.com/docs/components/select#scrollable
 
 ### Number
 - [x] Bouton input number avec bouton - et +
