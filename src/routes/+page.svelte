@@ -24,14 +24,14 @@
 	let values = {
 		radiogroup: '',
 		textarea: '',
-		select: undefined,
+		select: null,
 		switch: false,
 		checkbox: false,
 		input_lastname: '',
 		input_firstname: '',
 		input_mail: '',
 		input_number: 0,
-		datepicker: undefined
+		datepicker: null
 	};
 </script>
 
